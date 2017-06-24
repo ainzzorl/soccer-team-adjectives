@@ -22,6 +22,29 @@ end
 number_of_lines = File.open('./input/soccer-comments.csv').readlines.size
 line_index = 0
 
+def teams_in_segment(segment, team_name_map)
+  teams = Set.new
+  word_index = 0
+  last_two_words = []
+  last_three_words = []
+  segment.each_word do |w|
+    word = w.to_s.downcase
+    last_two_words.shift if word_index > 1
+    last_three_words.shift if word_index > 2
+    last_two_words << w
+    last_three_words << w
+    if team_name_map.key?(word)
+      teams.add(team_name_map[word])
+    elsif word_index > 0 && team_name_map.key?(last_two_words.join(' '))
+      teams.add(team_name_map[last_two_words.join(' ')])
+    elsif word_index > 1 && team_name_map.key?(last_three_words.join(' '))
+      teams.add(team_name_map[last_three_words.join(' ')])
+    end
+    word_index += 1
+  end
+  teams
+end
+
 start_time = Time.now
 CSV.foreach("input/soccer-comments-and-ids-2017-05.csv") do |comment|
   if line_index % 1000 == 0
@@ -33,13 +56,7 @@ CSV.foreach("input/soccer-comments-and-ids-2017-05.csv") do |comment|
   par = paragraph comment[0]
   par.segment.each do |segment|
     segment.tokenize
-    teams = Set.new
-    segment.each_word do |w|
-      word = w.to_s.downcase
-      if team_name_map.key?(word)
-        teams.add(team_name_map[word])
-      end
-    end
+    teams = teams_in_segment(segment, team_name_map)
     next if teams.empty?
     segment.apply :category
     adjectives = segment
