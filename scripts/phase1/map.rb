@@ -22,8 +22,11 @@ end
 number_of_lines = File.open('./input/soccer-comments.csv').readlines.size
 line_index = 0
 
+start_time = Time.now
 CSV.foreach("input/soccer-comments-and-ids-2017-05.csv") do |comment|
-  puts "Line #{line_index}/#{number_of_lines}, #{line_index * 100 / number_of_lines}%" if line_index % 1000 == 0
+  if line_index % 1000 == 0
+    puts "Line #{line_index}/#{number_of_lines}, #{line_index * 100 / number_of_lines}%, time elapsed: #{Time.now - start_time}"
+  end
   line_index += 1
 
   team_adjective_counts = {}
