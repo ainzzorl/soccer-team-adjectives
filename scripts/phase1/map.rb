@@ -7,9 +7,8 @@ require 'json'
 require 'csv'
 include Treat::Core::DSL
 
-teams = YAML.load_file './config/teams.yaml'
+teams = YAML.load_file './config/phase1/teams.yaml'
 
-output_file = File.open('./tmp/mapped.dat', 'w')
 
 team_name_map = {}
 teams.each do |team|
