@@ -33,7 +33,6 @@ CSV.foreach("input/soccer-comments-and-ids-2017-05.csv") do |comment|
   par = paragraph comment[0]
   par.segment.each do |segment|
     segment.tokenize
-    segment.apply :category
     teams = Set.new
     segment.each_word do |w|
       word = w.to_s.downcase
@@ -42,6 +41,7 @@ CSV.foreach("input/soccer-comments-and-ids-2017-05.csv") do |comment|
       end
     end
     next if teams.empty?
+    segment.apply :category
     adjectives = segment
       .adjectives
       .map { |a| a.to_s.downcase }
