@@ -25,7 +25,7 @@ line_index = 0
 start_time = Time.now
 CSV.foreach("input/soccer-comments-and-ids-2017-05.csv") do |comment|
   if line_index % 1000 == 0
-    puts "Line #{line_index}/#{number_of_lines}, #{line_index * 100 / number_of_lines}%, time elapsed: #{Time.now - start_time}"
+    puts "Line #{line_index}/#{number_of_lines}, #{(line_index * 100.to_f / number_of_lines).round(2)}%, time elapsed: #{Time.now - start_time}"
   end
   line_index += 1
 
