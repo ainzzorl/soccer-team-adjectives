@@ -1,6 +1,46 @@
-- canonical_name: Barcelona
-  alternative_names: ['Barca']
+# EPL
 - canonical_name: Arsenal
   alternative_names: ['Gunners']
+- canonical_name: Manchester United
+  alternative_names: ['Red Devils', 'MU']
+- canonical_name: Chelsea
+  alternative_names: ['Pensioners', 'CFC']
+- canonical_name: Liverpool
+  alternative_names: ['LFC']
+- canonical_name: Manchester City
+  alternative_names: ['The Citizens', 'The Sky Blues', 'Man City', 'ManCity']
+- canonical_name: Tottenham
+  alternative_names: ['Spurs', 'Lilywhites']
+- canonical_name: Leicester
+  alternative_names: ['The Foxes']
+- canonical_name: Everton
+  alternative_names: ['Toffees']
+- canonical_name: West Ham
+  alternative_names: ['The Irons', 'The Hammers', 'Westham']
+- canonical_name: Swansea
+  alternative_names: ['The Swans']
+- canonical_name: Crystal Palace
+  alternative_names: ['The Eagles', 'The Glaziers']
+- canonical_name: West Bromwich
+  alternative_names: ['The Baggies', 'The Throstles']
+- canonical_name: Southampton
+  alternative_names: ['The Saints']
+- canonical_name: Stoke City
+  alternative_names: ['The Potters']
+- canonical_name: Watford
+  alternative_names: ['The Hornets', 'The Golden Boys', 'Yellow Army', "The 'Orns'"]
+- canonical_name: Newcastle United
+  alternative_names: ['Newcastle', 'The Magpies', 'Geordies', 'Toon']
+- canonical_name: Burnley
+  alternative_names: ['BFC', 'The Clarets']
+- canonical_name: Brighton & Hove Albion
+  alternative_names: ['The Seagulls', 'Brighton']
+- canonical_name: Huddersfield Town
+  alternative_names: ['Huddersfield', 'The Terriers']
+- canonical_name: Bournemouth
+  alternative_names: ['Boscombe']
+
+- canonical_name: Barcelona
+  alternative_names: ['Barca']
 - canonical_name: Bayern
   alternative_names: []
