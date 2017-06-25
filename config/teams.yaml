@@ -40,7 +40,44 @@
 - canonical_name: Bournemouth
   alternative_names: ['Boscombe']
 
+# Spain
 - canonical_name: Barcelona
   alternative_names: ['Barca']
+
+# Germany
 - canonical_name: Bayern
+  alternative_names: ['Munich']
+- canonical_name: Borussia Dortmund
+  alternative_names: ['Borussia', 'Dortmund', 'BVB']
+
+# Italy
+- canonical_name: Juventus
+  alternative_names: ['JFC', 'Juve']
+- canonical_name: Inter
+  alternative_names: ['Internazionale']
+
+# France
+- canonical_name: PSG
+  alternative_names: ['Paris Saint-Germain', 'Paris SG']
+- canonical_name: Monaco
+  alternative_names: ['ASM']
+
+# Portugal
+- canonical_name: Benfica
   alternative_names: []
+- canonical_name: Porto
+  alternative_names: []
+
+# Russia
+- canonical_name: Zenit
+  alternative_names: []
+- canonical_name: CSKA
+  alternative_names: []
+- canonical_name: Spartak
+  alternative_names: []
+
+# MLS
+- canonical_name: Sounders
+  alternative_names: ['Seattle']
+- canonical_name: Timber
+  alternative_names: ['Portland']
