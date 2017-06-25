@@ -7,7 +7,10 @@ require 'json'
 require 'csv'
 include Treat::Core::DSL
 
-teams = YAML.load_file './config/phase1/teams.yaml'
+INPUT_FILE = './input/soccer_comments_and_ids_2017.csv'
+OUTPUT_FILE = './tmp/phase1/mapped.dat'
+
+teams = YAML.load_file './config/teams.yaml'
 
 
 team_name_map = {}
@@ -17,9 +20,6 @@ teams.each do |team|
     team_name_map[alt.downcase] = team['canonical_name']
   end
 end
-
-number_of_lines = File.open('./input/soccer-comments.csv').readlines.size
-line_index = 0
 
 def teams_in_segment(segment, team_name_map)
   teams = Set.new
@@ -44,8 +44,14 @@ def teams_in_segment(segment, team_name_map)
   teams
 end
 
+output_file = File.open(OUTPUT_FILE, 'w')
+
+csv_lines = CSV.read(INPUT_FILE)
+number_of_lines = csv_lines.size
+line_index = 0
+
 start_time = Time.now
-CSV.foreach("input/soccer-comments-and-ids-2017-05.csv") do |comment|
+csv_lines.each do |comment|
   if line_index % 1000 == 0
     puts "Line #{line_index}/#{number_of_lines}, #{(line_index * 100.to_f / number_of_lines).round(2)}%, time elapsed: #{Time.now - start_time}"
   end
@@ -80,3 +86,5 @@ CSV.foreach("input/soccer-comments-and-ids-2017-05.csv") do |comment|
   output_line = result.to_json
   output_file.puts(output_line)
 end
+
+output_file.close
