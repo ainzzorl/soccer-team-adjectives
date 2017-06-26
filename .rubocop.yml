@@ -1,0 +1,17 @@
+Metrics/AbcSize:
+  Max: 30 # TODO: lower
+
+Metrics/CyclomaticComplexity:
+  Max: 10 # TODO: lower
+
+Metrics/BlockLength:
+  Max: 40 # TODO: lower
+
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/PerceivedComplexity:
+  Max: 10
+
+Metrics/LineLength:
+  Max: 120

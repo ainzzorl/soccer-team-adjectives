@@ -17,4 +17,6 @@ data.keys.each do |team|
   end
 end
 
-File.open('./tmp/phase2/most-common-adjectives.dat', 'w').puts adjective_counts.sort { |a,b| b[1]<=>a[1] }.map { |a| a[0] }.take(LIMIT)
+File.open('./tmp/phase2/most-common-adjectives.dat', 'w').puts(
+  adjective_counts.sort { |a, b| b[1] <=> a[1] }.map { |a| a[0] }.take(LIMIT)
+)

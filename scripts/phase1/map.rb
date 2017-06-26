@@ -7,11 +7,10 @@ require 'json'
 require 'csv'
 include Treat::Core::DSL
 
-INPUT_FILE = './input/soccer_comments_and_ids_2017.csv'
-OUTPUT_FILE = './tmp/phase1/mapped.dat'
+INPUT_FILE = './input/soccer_comments_and_ids_2017.csv'.freeze
+OUTPUT_FILE = './tmp/phase1/mapped.dat'.freeze
 
 teams = YAML.load_file './config/teams.yaml'
-
 
 team_name_map = {}
 teams.each do |team|
@@ -52,8 +51,9 @@ line_index = 0
 
 start_time = Time.now
 csv_lines.each do |comment|
-  if line_index % 1000 == 0
-    puts "Line #{line_index}/#{number_of_lines}, #{(line_index * 100.to_f / number_of_lines).round(2)}%, time elapsed: #{Time.now - start_time}"
+  if (line_index % 1000).zero?
+    puts "Line #{line_index}/#{number_of_lines}, #{(line_index * 100.to_f / number_of_lines).round(2)}%," \
+      " time elapsed: #{Time.now - start_time}"
   end
   line_index += 1
 
@@ -65,8 +65,8 @@ csv_lines.each do |comment|
     next if teams.empty?
     segment.apply :category
     adjectives = segment
-      .adjectives
-      .map { |a| a.to_s.downcase }
+                 .adjectives
+                 .map { |a| a.to_s.downcase }
     next if adjectives.empty?
 
     teams.each do |team|
@@ -74,7 +74,7 @@ csv_lines.each do |comment|
       team_counts = team_adjective_counts[team]
       adjectives.each do |adjective|
         count = team_counts[adjective]
-        count.nil? ? team_counts[adjective] = 1 : team_counts[adjective] = count + 1
+        team_counts[adjective] = count.nil? ? 1 : count + 1
       end
     end
   end

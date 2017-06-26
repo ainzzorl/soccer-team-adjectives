@@ -3,13 +3,13 @@
 require 'json'
 
 common_adjectives = File.open('./tmp/phase2/most-common-adjectives.dat').readlines.map do |l|
-  l.sub("\n", "")
+  l.sub("\n", '')
 end
 data = JSON.parse(IO.read('./tmp/phase1/reduced.json'))
 
 data.keys.each do |team|
-  data[team].select! do |entry|
-    !common_adjectives.include?(entry['adjective'])
+  data[team].reject do |entry|
+    common_adjectives.include?(entry['adjective'])
   end
 end
 
