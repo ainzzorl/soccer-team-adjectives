@@ -7,7 +7,7 @@ RSpec.describe SoccerTeamAdjectives::AdjectiveFilter do
     end
 
     it 'excludes scores' do
-      %w[1-1 7-3 0-0].each { |a| expect(filter.exclude?(a)).to be true }
+      %w[1-1 7-3 0-0 11-12].each { |a| expect(filter.exclude?(a)).to be true }
     end
 
     it 'does not exclude non-blacklisted words' do
