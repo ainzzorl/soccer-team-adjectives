@@ -43,6 +43,44 @@
 # Spain
 - canonical_name: Barcelona
   alternative_names: ['Barca']
+- canonical_name: Alavés
+  alternative_names: ['Alaves']
+- canonical_name: Athletic Bilbao
+  alternative_names: ['Athletic', 'Bilbao']
+- canonical_name: Atletico Madrid
+  alternative_names: ['Atlético', 'Atletico']
+- canonical_name: Celta Vigo
+  alternative_names: ['Celta']
+- canonical_name: Deportivo
+  alternative_names: []
+- canonical_name: Eibar
+  alternative_names: []
+- canonical_name: Espanyol
+  alternative_names: []
+- canonical_name: Granada
+  alternative_names: []
+- canonical_name: Las Palmas
+  alternative_names: []
+- canonical_name: Leganés
+  alternative_names: ['Leganes']
+- canonical_name: Málaga
+  alternative_names: ['Malaga']
+- canonical_name: Osasuna
+  alternative_names: ['Osasuna']
+- canonical_name: 'Real Betis'
+  alternative_names: ['Betis']
+- canonical_name: Real Madrid
+  alternative_names: ['Real', 'RM']
+- canonical_name: Real Sociedad
+  alternative_names: []
+- canonical_name: Sevilla
+  alternative_names: []
+- canonical_name: Sporting Gijón
+  alternative_names: ['Gijón', 'Gijon']
+- canonical_name: Valencia
+  alternative_names: []
+- canonical_name: Villarreal
+  alternative_names: []
 
 # Germany
 - canonical_name: Bayern
