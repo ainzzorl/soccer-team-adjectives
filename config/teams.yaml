@@ -83,10 +83,42 @@
   alternative_names: []
 
 # Germany
-- canonical_name: Bayern
-  alternative_names: ['Munich']
+- canonical_name: Bayern Munich
+  alternative_names: ['Munich', 'Bayern']
 - canonical_name: Borussia Dortmund
   alternative_names: ['Borussia', 'Dortmund', 'BVB']
+- canonical_name: Hamburger SV
+  alternative_names: ['Hamburger']
+- canonical_name: Werder Bremen
+  alternative_names: ['Werder']
+- canonical_name: Schalke 04
+  alternative_names: ['Schalke']
+- canonical_name: Eintracht Frankfurt
+  alternative_names: ['Eintracht']
+- canonical_name: FC Köln
+  alternative_names: ['Köln', 'Koln']
+- canonical_name: Hertha BSC
+  alternative_names: ['Hertha']
+- canonical_name: Borussia Mönchengladbach
+  alternative_names: ['Mönchengladbach', 'Monchengladbach']
+- canonical_name: Bayer 04 Leverkusen
+  alternative_names: ['Leverkusen']
+- canonical_name: VfL Wolfsburg
+  alternative_names: ['Wolfsburg']
+- canonical_name: FSV Mainz 05
+  alternative_names: [' Mainz']
+- canonical_name: TSG 1899 Hoffenheim
+  alternative_names: ['Hoffenheim']
+- canonical_name: FC Augsburg
+  alternative_names: ['Augsburg']
+- canonical_name: SC Freiburg
+  alternative_names: ['Freiburg']
+- canonical_name: RB Leipzig
+  alternative_names: ['Leipzig']
+- canonical_name: VfB Stuttgart
+  alternative_names: ['Stuttgart']
+- canonical_name: Hannover 96
+  alternative_names: ['Hannover']
 
 # Italy
 - canonical_name: Juventus
