@@ -7,6 +7,8 @@ require 'json'
 require 'csv'
 include Treat::Core::DSL
 
+Dir[File.dirname(__FILE__) + '/../../lib/soccer_team_adjectives/*.rb'].each { |file| require file }
+
 INPUT_FILE = './input/soccer_comments_and_ids_2017.csv'.freeze
 OUTPUT_FILE = './tmp/phase1/mapped.dat'.freeze
 
@@ -20,34 +22,13 @@ teams.each do |team|
   end
 end
 
-def teams_in_segment(segment, team_name_map)
-  teams = Set.new
-  word_index = 0
-  last_two_words = []
-  last_three_words = []
-  segment.each_word do |w|
-    word = w.to_s.downcase
-    last_two_words.shift if word_index > 1
-    last_three_words.shift if word_index > 2
-    last_two_words << w
-    last_three_words << w
-    if team_name_map.key?(word)
-      teams.add(team_name_map[word])
-    elsif word_index > 0 && team_name_map.key?(last_two_words.join(' '))
-      teams.add(team_name_map[last_two_words.join(' ')])
-    elsif word_index > 1 && team_name_map.key?(last_three_words.join(' '))
-      teams.add(team_name_map[last_three_words.join(' ')])
-    end
-    word_index += 1
-  end
-  teams
-end
-
 output_file = File.open(OUTPUT_FILE, 'w')
 
 csv_lines = CSV.read(INPUT_FILE)
 number_of_lines = csv_lines.size
 line_index = 0
+
+team_name_extractor = SoccerTeamAdjectives::TeamNameExtractor.new(team_name_map)
 
 start_time = Time.now
 csv_lines.each do |comment|
@@ -60,8 +41,7 @@ csv_lines.each do |comment|
   team_adjective_counts = {}
   par = paragraph comment[0]
   par.segment.each do |segment|
-    segment.tokenize
-    teams = teams_in_segment(segment, team_name_map)
+    teams = team_name_extractor.extract(segment)
     next if teams.empty?
     segment.apply :category
     adjectives = segment

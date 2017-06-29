@@ -1,11 +1,15 @@
 GEM
   specs:
     ast (2.3.0)
+    birch (0.1.1)
     diff-lcs (1.2.5)
+    json (1.8.6)
+    mime-types (1.25.1)
     parallel (1.11.2)
     parser (2.3.3.1)
       ast (~> 2.2)
     powerpack (0.1.1)
+    progressbar (1.8.2)
     rainbow (2.2.1)
     rake (12.0.0)
     rspec (3.5.0)
@@ -29,7 +33,18 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.8.1)
+    rubyzip (0.9.9)
+    schiphol (1.0.2)
+      progressbar (>= 0.10.0)
+      rubyzip (~> 0.9.9)
+    treat (2.1.0)
+      birch
+      schiphol
+      yomu
     unicode-display_width (1.1.3)
+    yomu (0.2.4)
+      json (~> 1.8)
+      mime-types (~> 1.23)
 
 PLATFORMS
   ruby
@@ -38,6 +53,7 @@ DEPENDENCIES
   rake
   rspec
   rubocop
+  treat
 
 BUNDLED WITH
    1.13.7
