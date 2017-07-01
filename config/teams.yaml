@@ -164,9 +164,47 @@
 
 # France
 - canonical_name: PSG
-  alternative_names: ['Paris Saint-Germain', 'Paris SG']
+  alternative_names: ['Paris Saint-Germain', 'Paris Saint Germain', 'Paris SG']
 - canonical_name: Monaco
   alternative_names: ['ASM']
+- canonical_name: Angers
+  alternative_names: []
+- canonical_name: Bastia
+  alternative_names: []
+- canonical_name: Bordeaux
+  alternative_names: []
+- canonical_name: Caen
+  alternative_names: []
+- canonical_name: Dijon
+  alternative_names: []
+- canonical_name: Guingamp
+  alternative_names: []
+- canonical_name: Lille
+  alternative_names: []
+- canonical_name: Lorient
+  alternative_names: []
+- canonical_name: Olympique Lyonnais
+  alternative_names: ['Olympique', 'Lyon']
+- canonical_name: Marseille
+  alternative_names: []
+- canonical_name: Metz
+  alternative_names: []
+- canonical_name: Montpellier
+  alternative_names: []
+- canonical_name: Nancy
+  alternative_names: []
+- canonical_name: Nantes
+  alternative_names: []
+- canonical_name: Nice
+  alternative_names: []
+- canonical_name: Rennes
+  alternative_names: []
+- canonical_name: Rennes
+  alternative_names: []
+- canonical_name: Saint-Étienne
+  alternative_names: ['Saint Étienne', 'Saint-Etienne', 'Saint Etienne']
+- canonical_name: Toulouse
+  alternative_names: []
 
 # Portugal
 - canonical_name: Benfica
