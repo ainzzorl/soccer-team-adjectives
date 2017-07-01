@@ -211,6 +211,38 @@
   alternative_names: []
 - canonical_name: Porto
   alternative_names: []
+- canonical_name: Arouca
+  alternative_names: []
+- canonical_name: Belenenses
+  alternative_names: []
+- canonical_name: Boavista
+  alternative_names: []
+- canonical_name: Braga
+  alternative_names: []
+- canonical_name: Chaves
+  alternative_names: []
+- canonical_name: Estoril
+  alternative_names: []
+- canonical_name: Feirense
+  alternative_names: []
+- canonical_name: Marítimo
+  alternative_names: ['Maritimo']
+- canonical_name: Moreirense
+  alternative_names: []
+- canonical_name: Nacional
+  alternative_names: []
+- canonical_name: Paços de Ferreira
+  alternative_names: ['Pacos de Ferreira']
+- canonical_name: Rio Ave
+  alternative_names: []
+- canonical_name: Sporting CP
+  alternative_names: ['Sporting']
+- canonical_name: Tondela
+  alternative_names: []
+- canonical_name: Vitória de Guimarães
+  alternative_names: [Vitoria de Guimaraes]
+- canonical_name: Vitória de Setúbal
+  alternative_names: ['Vitoria de Setubal']
 
 # Russia
 - canonical_name: Zenit
