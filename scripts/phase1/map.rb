@@ -12,6 +12,8 @@ Dir[File.dirname(__FILE__) + '/../../lib/soccer_team_adjectives/*.rb'].each { |f
 INPUT_FILE = './input/soccer_comments_and_ids_2017.csv'.freeze
 OUTPUT_FILE = './tmp/phase1/mapped.dat'.freeze
 
+config = YAML.load_file './config/config.yaml'
+
 teams = YAML.load_file './config/teams.yaml'
 
 team_name_map = {}
@@ -21,14 +23,13 @@ teams.each do |team|
     team_name_map[alt.downcase] = team['canonical_name']
   end
 end
+team_name_extractor = SoccerTeamAdjectives::TeamNameExtractor.new(team_name_map, config['common_word_team_names'])
 
 output_file = File.open(OUTPUT_FILE, 'w')
 
 csv_lines = CSV.read(INPUT_FILE)
 number_of_lines = csv_lines.size
 line_index = 0
-
-team_name_extractor = SoccerTeamAdjectives::TeamNameExtractor.new(team_name_map)
 
 start_time = Time.now
 csv_lines.each do |comment|
