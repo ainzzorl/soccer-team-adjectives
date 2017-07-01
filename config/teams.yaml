@@ -125,6 +125,42 @@
   alternative_names: ['JFC', 'Juve']
 - canonical_name: Inter
   alternative_names: ['Internazionale']
+- canonical_name: Atalanta
+  alternative_names: []
+- canonical_name: Benevento
+  alternative_names: []
+- canonical_name: Bologna
+  alternative_names: []
+- canonical_name: Cagliari
+  alternative_names: []
+- canonical_name: Chievo
+  alternative_names: []
+- canonical_name: Crotone
+  alternative_names: []
+- canonical_name: Fiorentina
+  alternative_names: []
+- canonical_name: Genoa
+  alternative_names: []
+- canonical_name: Hellas Verona
+  alternative_names: ['Hellas']
+- canonical_name: Lazio
+  alternative_names: []
+- canonical_name: Milan
+  alternative_names: []
+- canonical_name: Napoli
+  alternative_names: []
+- canonical_name: Roma
+  alternative_names: []
+- canonical_name: Sampdoria
+  alternative_names: []
+- canonical_name: Sassuolo
+  alternative_names: []
+- canonical_name: SPAL
+  alternative_names: []
+- canonical_name: Torino
+  alternative_names: []
+- canonical_name: Udinese
+  alternative_names: []
 
 # France
 - canonical_name: PSG
