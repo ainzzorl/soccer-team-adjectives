@@ -251,6 +251,32 @@
   alternative_names: []
 - canonical_name: Spartak
   alternative_names: []
+- canonical_name: Amkar
+  alternative_names: []
+- canonical_name: Anzhi
+  alternative_names: ['Makhachkala']
+- canonical_name: Arsenal Tula
+  alternative_names: []
+- canonical_name: Dynamo Moscow
+  alternative_names: []
+- canonical_name: Krasnodar
+  alternative_names: []
+- canonical_name: Lokomotiv
+  alternative_names: []
+- canonical_name: Orenburg
+  alternative_names: []
+- canonical_name: Rostov
+  alternative_names: []
+- canonical_name: Rubin Kazan
+  alternative_names: ['Rubin']
+- canonical_name: FC Akhmat Grozny
+  alternative_names: ['Terek']
+- canonical_name: Tom Tomsk
+  alternative_names: ['Tomsk']
+- canonical_name: Ufa
+  alternative_names: []
+- canonical_name: Ural
+  alternative_names: []
 
 # MLS
 - canonical_name: Sounders
