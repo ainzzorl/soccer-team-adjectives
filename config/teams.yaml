@@ -283,3 +283,43 @@
   alternative_names: ['Seattle']
 - canonical_name: Timber
   alternative_names: ['Portland']
+- canonical_name: Atlanta United FC
+  alternative_names: ['Atlanta']
+- canonical_name: Chicago Fire
+  alternative_names: ['Chicago']
+- canonical_name: Columbus Crew
+  alternative_names: ['Columbus']
+- canonical_name: D.C. United
+  alternative_names: ['DC United']
+- canonical_name: Montreal Impact
+  alternative_names: ['Montreal']
+- canonical_name: New England Revolution
+  alternative_names: ['New England', 'NE Revolution']
+- canonical_name: New York City
+  alternative_names: []
+- canonical_name: New York Red Bulls
+  alternative_names: ['Red Bulls']
+- canonical_name: Orlando City SC
+  alternative_names: ['Orlando']
+- canonical_name: Philadelphia Union
+  alternative_names: ['Philadelphia']
+- canonical_name: Toronto FC
+  alternative_names: ['Toronto']
+- canonical_name: Colorado Rapids
+  alternative_names: ['Colorado']
+- canonical_name: FC Dallas
+  alternative_names: ['Dallas']
+- canonical_name: Houston Dynamo
+  alternative_names: ['Houston']
+- canonical_name: LA Galaxy
+  alternative_names: ['Galaxy']
+- canonical_name: Minnesota United FC
+  alternative_names: ['Minnesota']
+- canonical_name: Real Salt Lake
+  alternative_names: ['Salt Lake']
+- canonical_name: San Jose Earthquakes
+  alternative_names: ['San Jose', 'Earthquakes']
+- canonical_name: Sporting Kansas City
+  alternative_names: ['Kansas City']
+- canonical_name: Vancouver Whitecaps FC
+  alternative_names: ['Vancouver', 'Whitecaps']
