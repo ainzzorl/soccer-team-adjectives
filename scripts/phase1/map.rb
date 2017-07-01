@@ -1,5 +1,3 @@
-#!/usr/bin/env ruby
-
 require 'yaml'
 require 'treat'
 require 'set'

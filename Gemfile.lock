@@ -3,6 +3,7 @@ GEM
     ast (2.3.0)
     birch (0.1.1)
     diff-lcs (1.2.5)
+    engtagger (0.2.1)
     json (1.8.6)
     mime-types (1.25.1)
     parallel (1.11.2)
@@ -34,6 +35,7 @@ GEM
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.8.1)
     rubyzip (0.9.9)
+    scalpel (0.2.1)
     schiphol (1.0.2)
       progressbar (>= 0.10.0)
       rubyzip (~> 0.9.9)
@@ -50,9 +52,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  engtagger
   rake
   rspec
   rubocop
+  scalpel
   treat
 
 BUNDLED WITH

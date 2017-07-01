@@ -1,5 +1,3 @@
-#!/usr/bin/env ruby
-
 require 'json'
 
 Dir[File.dirname(__FILE__) + '/../../lib/soccer_team_adjectives/*.rb'].each { |file| require file }
