@@ -1,9 +1,9 @@
 require 'json'
 require 'yaml'
 
-LIMIT = 100
-
 Dir[File.dirname(__FILE__) + '/../../lib/soccer_team_adjectives/*.rb'].each { |file| require file }
+
+config = YAML.load_file './config/config.yaml'
 
 data = JSON.parse(ARGF.read)
 
@@ -18,7 +18,10 @@ data.keys.each do |team|
   end
 end
 
-common_adjectives = adjective_counts.sort { |a, b| b[1] <=> a[1] }.map { |a| a[0] }.take(LIMIT)
+common_adjectives = adjective_counts
+                    .sort { |a, b| b[1] <=> a[1] }
+                    .map { |a| a[0] }
+                    .take(config['common_adjectives_to_exclude'])
 
 data.keys.each do |team|
   data[team].reject! do |entry|
