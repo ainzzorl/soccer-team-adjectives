@@ -19,3 +19,5 @@ blacklisted_adjectives:
 blacklisted_adjective_patterns:
 - ^[0-9]+(th|st|nd|rd)$
 - ^(?!.*[a-zA-Z]).*$
+
+max_adjectives_per_team: 5
