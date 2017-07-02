@@ -3,7 +3,7 @@ require 'yaml'
 
 Dir[File.dirname(__FILE__) + '/../../lib/soccer_team_adjectives/*.rb'].each { |file| require file }
 
-data = JSON.parse(IO.read('./tmp/phase2/after-filter.dat'))
+data = JSON.parse(ARGF.read)
 
 X = 1.to_f
 Y = 1.0
@@ -38,4 +38,4 @@ data.keys.each do |team|
   end
 end
 
-File.open('./tmp/phase2/scored.dat', 'w').puts JSON.pretty_generate(data)
+puts JSON.pretty_generate(data)

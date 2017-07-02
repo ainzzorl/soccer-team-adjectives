@@ -5,7 +5,7 @@ LIMIT = 100
 
 Dir[File.dirname(__FILE__) + '/../../lib/soccer_team_adjectives/*.rb'].each { |file| require file }
 
-data = JSON.parse(IO.read('./tmp/phase1/reduced.json'))
+data = JSON.parse(ARGF.read)
 
 adjective_counts = {}
 
@@ -26,4 +26,4 @@ data.keys.each do |team|
   end
 end
 
-File.open('./tmp/phase2/after-filter.dat', 'w').puts JSON.pretty_generate(data)
+puts JSON.pretty_generate(data)

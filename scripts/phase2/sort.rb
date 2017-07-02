@@ -1,6 +1,6 @@
 require 'json'
 
-data = JSON.parse(IO.read('./tmp/phase2/top-N.json'))
+data = JSON.parse(ARGF.read)
 
 data = data.sort_by do |_, adjectives|
   -adjectives
@@ -8,4 +8,6 @@ data = data.sort_by do |_, adjectives|
     .inject(0) { |sum, c| sum + c }
 end
 
-File.open('./tmp/phase2/sorted.json', 'w').puts JSON.pretty_generate(data)
+data = data.to_h
+
+puts JSON.pretty_generate(data)
