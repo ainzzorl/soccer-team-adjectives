@@ -5,8 +5,6 @@ LIMIT = 100
 
 Dir[File.dirname(__FILE__) + '/../../lib/soccer_team_adjectives/*.rb'].each { |file| require file }
 
-config = YAML.load_file './config/config.yaml'
-
 data = JSON.parse(IO.read('./tmp/phase1/reduced.json'))
 
 adjective_counts = {}
@@ -22,11 +20,9 @@ end
 
 common_adjectives = adjective_counts.sort { |a, b| b[1] <=> a[1] }.map { |a| a[0] }.take(LIMIT)
 
-filter = SoccerTeamAdjectives::AdjectiveFilter.new(config)
-
 data.keys.each do |team|
   data[team].reject! do |entry|
-    common_adjectives.include?(entry['adjective']) || filter.exclude?(entry['adjective'])
+    common_adjectives.include?(entry['adjective'])
   end
 end
 
