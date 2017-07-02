@@ -14,8 +14,12 @@ RSpec.describe SoccerTeamAdjectives::AdjectiveFilter do
       %w[4th 9th 11th 1st 2nd 3rd].each { |a| expect(filter.exclude?(a)).to be true }
     end
 
+    it 'excludes words with no letters' do
+      %w[75 12.34 12,34].each { |a| expect(filter.exclude?(a)).to be true }
+    end
+
     it 'does not exclude non-blacklisted words' do
-      %w[good bad normal].each { |a| expect(filter.exclude?(a)).to be false }
+      %w[good bad normal 4ever ever1].each { |a| expect(filter.exclude?(a)).to be false }
     end
   end
 end
