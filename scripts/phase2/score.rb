@@ -3,10 +3,12 @@ require 'yaml'
 
 Dir[File.dirname(__FILE__) + '/../../lib/soccer_team_adjectives/*.rb'].each { |file| require file }
 
-data = JSON.parse(ARGF.read)
+config = YAML.load_file './config/config.yaml'
 
-X = 1.to_f
-Y = 1.0
+local_frequency_coefficient = config['scoring']['local_frequency_coefficient'].to_f
+global_frequency_coefficient = config['scoring']['global_frequency_coefficient'].to_f
+
+data = JSON.parse(ARGF.read)
 
 adjectives = {}
 total_adjective_count = 0
@@ -31,7 +33,8 @@ data.keys.each do |team|
     entry['local_frequency'] = entry['count'].to_f / total_adjective_team_count
     entry['global_frequency'] = adjectives[entry['adjective']][:ratio]
     entry['relative_ratio'] = entry['local_frequency'] / adjectives[entry['adjective']][:ratio]
-    entry['score'] = entry['local_frequency'] * X - entry['global_frequency'] * X
+    entry['score'] = entry['local_frequency'] * local_frequency_coefficient +
+                     entry['global_frequency'] * global_frequency_coefficient
   end
   data[team] = data[team].sort_by do |entry|
     -entry['score']
