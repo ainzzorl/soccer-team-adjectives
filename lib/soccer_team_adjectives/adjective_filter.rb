@@ -1,7 +1,10 @@
 module SoccerTeamAdjectives
   # Determines adjectives that must be excluded from the result.
   class AdjectiveFilter
-    BLACKLIST = %w[spanish german english french italian russian].freeze
+    BLACKLIST = %w[
+      spanish german english french italian russian chinese american
+      austrian canadian turkish bulgarian brazilian colombian
+    ].freeze
     SCORE_REGEX = Regexp.new('^[0-9]+-[0-9]+$').freeze
     NUMERIC_ORDER_REGEX = Regexp.new('^[0-9]+(th|st|nd|rd)$').freeze
 
