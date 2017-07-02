@@ -1,15 +1,12 @@
 module SoccerTeamAdjectives
   # Determines adjectives that must be excluded from the result.
   class AdjectiveFilter
-    BLACKLIST = %w[
-      spanish german english french italian russian chinese american
-      austrian canadian turkish bulgarian brazilian colombian
-    ].freeze
+    def initialize(config)
+      @config = config
 
-    REGEX_BLACKLIST = [
-      Regexp.new('^[0-9]+(th|st|nd|rd)$').freeze,
-      Regexp.new('^(?!.*[a-zA-Z]).*$').freeze
-    ].freeze
+      @blacklisted_adjectives = config['blacklisted_adjectives']
+      @blacklisted_adjective_patterns = config['blacklisted_adjective_patterns'].map { |p| Regexp.new(p) }
+    end
 
     def exclude?(adjective)
       blacklisted?(adjective) || blacklisted_by_regex?(adjective)
@@ -18,12 +15,12 @@ module SoccerTeamAdjectives
     private
 
     def blacklisted?(adjective)
-      BLACKLIST.include?(adjective)
+      @blacklisted_adjectives.include?(adjective)
     end
 
     # rubocop:disable DoubleNegation
     def blacklisted_by_regex?(adjective)
-      REGEX_BLACKLIST.any? { |r| !!(adjective =~ r) }
+      @blacklisted_adjective_patterns.any? { |r| !!(adjective =~ r) }
     end
     # rubocop:enable DoubleNegation
   end

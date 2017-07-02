@@ -1,5 +1,9 @@
+require 'yaml'
+
 RSpec.describe SoccerTeamAdjectives::AdjectiveFilter do
-  let(:filter) { SoccerTeamAdjectives::AdjectiveFilter.new }
+  let(:filter) { SoccerTeamAdjectives::AdjectiveFilter.new(config) }
+
+  let(:config) { YAML.load_file './config/config.yaml' }
 
   describe 'exclude?' do
     it 'excludes national adjectives' do

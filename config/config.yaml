@@ -1,1 +1,21 @@
 common_word_team_names: ['real', 'nice', 'city']
+
+blacklisted_adjectives:
+- spanish
+- german
+- english
+- french
+- italian
+- russian
+- chinese
+- american
+- austrian
+- canadian
+- turkish
+- bulgarian
+- brazilian
+- colombian
+
+blacklisted_adjective_patterns:
+- ^[0-9]+(th|st|nd|rd)$
+- ^(?!.*[a-zA-Z]).*$
