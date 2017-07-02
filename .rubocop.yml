@@ -17,3 +17,6 @@ Metrics/PerceivedComplexity:
 
 Metrics/LineLength:
   Max: 120
+
+Style/FileName:
+  Enabled: false
