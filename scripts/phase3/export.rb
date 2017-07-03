@@ -1,6 +1,8 @@
 require 'json'
 require 'yaml'
 
+config = YAML.load_file './config/config.yaml'
+
 teams = YAML.load_file './config/teams.yaml'
 
 data = JSON.parse(ARGF.read)
@@ -13,6 +15,7 @@ leagues.each do |league|
   league_teams.each do |team|
     team_data = data.key?(team['canonical_name']) ? data[team['canonical_name']] : []
     adjectives = team_data.map { |e| e['adjective'] }
+    adjectives.push('N/A') while adjectives.size < config['max_adjectives_per_team']
     file.puts(team['canonical_name'] + ';' + adjectives.join(';'))
   end
 end
