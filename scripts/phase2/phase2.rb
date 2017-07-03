@@ -1,8 +1,15 @@
 #!/usr/bin/env ruby
 
-`cat ./tmp/phase1/reduced.json |
-    bundle exec ruby ./scripts/phase2/filter-blacklisted-adjectives.rb |
-    bundle exec ruby ./scripts/phase2/filter-common-adjectives.rb |
-    bundle exec ruby ./scripts/phase2/score.rb |
-    bundle exec ruby ./scripts/phase2/sort.rb |
-    bundle exec ruby ./scripts/phase2/take-top.rb > tmp/phase2/result.dat`
+require 'yaml'
+
+config = YAML.load_file './config/config.yaml'
+
+command = 'cat ./tmp/phase1/reduced.json |'
+
+config['sequence']['phase2'].each do |e|
+  command += "bundle exec ruby ./scripts/phase2/#{e}.rb |"
+end
+
+command += 'cat > tmp/phase2/result.dat'
+
+`#{command}`
