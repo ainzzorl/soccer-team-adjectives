@@ -27,6 +27,8 @@ max_adjectives_per_team: 3
 
 common_adjectives_to_exclude: 100
 
+min_count: 5
+
 scoring:
   local_frequency_coefficient: 1
   global_frequency_coefficient: -1
@@ -37,4 +39,5 @@ sequence:
     - filter-common-adjectives
     - score
     - sort-teams
+    - filter-low-count-adjectives
     - take-top
