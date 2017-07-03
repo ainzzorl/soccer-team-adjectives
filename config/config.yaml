@@ -33,5 +33,5 @@ sequence:
     - filter-blacklisted-adjectives
     - filter-common-adjectives
     - score
-    - sort
+    - sort-teams
     - take-top
