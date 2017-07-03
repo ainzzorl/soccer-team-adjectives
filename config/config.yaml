@@ -15,9 +15,21 @@ blacklisted_adjectives:
 - bulgarian
 - brazilian
 - colombian
+- one
+- two
+- three
+- four
+- five
+- six
+- seven
+- eight
+- nine
+- ten
 - costa
 - finishing
 - cr7
+- west
+- foul
 
 blacklisted_adjective_patterns:
 - ^[0-9]+(th|st|nd|rd)$
