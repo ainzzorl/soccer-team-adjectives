@@ -33,13 +33,13 @@
   alternative_names: ['The Eagles', 'The Glaziers']
   league: epl
 - canonical_name: West Bromwich
-  alternative_names: ['The Baggies', 'The Throstles']
+  alternative_names: ['The Baggies', 'The Throstles', 'West Brom', 'WBA']
   league: epl
 - canonical_name: Southampton
   alternative_names: ['The Saints']
   league: epl
 - canonical_name: Stoke City
-  alternative_names: ['The Potters']
+  alternative_names: ['The Potters', 'Stoke']
   league: epl
 - canonical_name: Watford
   alternative_names: ['The Hornets', 'The Golden Boys', 'Yellow Army', "The 'Orns'"]
@@ -77,7 +77,7 @@
   alternative_names: ['Celta']
   league: laliga
 - canonical_name: Deportivo
-  alternative_names: []
+  alternative_names: ['La Coruña', 'La Coruna']
   league: laliga
 - canonical_name: Eibar
   alternative_names: []
@@ -139,7 +139,7 @@
   alternative_names: ['Schalke']
   league: bundesliga
 - canonical_name: Eintracht Frankfurt
-  alternative_names: ['Eintracht']
+  alternative_names: ['Eintracht', 'Die Adler']
   league: bundesliga
 - canonical_name: FC Köln
   alternative_names: ['Köln', 'Koln']
@@ -148,7 +148,7 @@
   alternative_names: ['Hertha']
   league: bundesliga
 - canonical_name: Borussia Mönchengladbach
-  alternative_names: ['Mönchengladbach', 'Monchengladbach']
+  alternative_names: ['Mönchengladbach', 'Monchengladbach', 'Gladbach']
   league: bundesliga
 - canonical_name: Bayer 04 Leverkusen
   alternative_names: ['Leverkusen']
