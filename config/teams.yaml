@@ -1,325 +1,480 @@
 # EPL
 - canonical_name: Arsenal
   alternative_names: ['Gunners']
+  league: epl
 - canonical_name: Manchester United
   alternative_names: ['Red Devils', 'MU']
+  league: epl
 - canonical_name: Chelsea
   alternative_names: ['Pensioners', 'CFC']
+  league: epl
 - canonical_name: Liverpool
   alternative_names: ['LFC']
+  league: epl
 - canonical_name: Manchester City
   alternative_names: ['The Citizens', 'The Sky Blues', 'Man City', 'ManCity']
+  league: epl
 - canonical_name: Tottenham
   alternative_names: ['Spurs', 'Lilywhites']
+  league: epl
 - canonical_name: Leicester
   alternative_names: ['The Foxes']
+  league: epl
 - canonical_name: Everton
   alternative_names: ['Toffees']
+  league: epl
 - canonical_name: West Ham
   alternative_names: ['The Irons', 'The Hammers', 'Westham']
+  league: epl
 - canonical_name: Swansea
   alternative_names: ['The Swans']
+  league: epl
 - canonical_name: Crystal Palace
   alternative_names: ['The Eagles', 'The Glaziers']
+  league: epl
 - canonical_name: West Bromwich
   alternative_names: ['The Baggies', 'The Throstles']
+  league: epl
 - canonical_name: Southampton
   alternative_names: ['The Saints']
+  league: epl
 - canonical_name: Stoke City
   alternative_names: ['The Potters']
+  league: epl
 - canonical_name: Watford
   alternative_names: ['The Hornets', 'The Golden Boys', 'Yellow Army', "The 'Orns'"]
+  league: epl
 - canonical_name: Newcastle United
   alternative_names: ['Newcastle', 'The Magpies', 'Geordies', 'Toon']
+  league: epl
 - canonical_name: Burnley
   alternative_names: ['BFC', 'The Clarets']
+  league: epl
 - canonical_name: Brighton & Hove Albion
   alternative_names: ['The Seagulls', 'Brighton']
+  league: epl
 - canonical_name: Huddersfield Town
   alternative_names: ['Huddersfield', 'The Terriers']
+  league: epl
 - canonical_name: Bournemouth
   alternative_names: ['Boscombe']
+  league: epl
 
 # Spain
 - canonical_name: Barcelona
   alternative_names: ['Barca']
+  league: laliga
 - canonical_name: Alavés
   alternative_names: ['Alaves']
+  league: laliga
 - canonical_name: Athletic Bilbao
   alternative_names: ['Athletic', 'Bilbao']
+  league: laliga
 - canonical_name: Atletico Madrid
   alternative_names: ['Atlético', 'Atletico']
+  league: laliga
 - canonical_name: Celta Vigo
   alternative_names: ['Celta']
+  league: laliga
 - canonical_name: Deportivo
   alternative_names: []
+  league: laliga
 - canonical_name: Eibar
   alternative_names: []
+  league: laliga
 - canonical_name: Espanyol
   alternative_names: []
+  league: laliga
 - canonical_name: Granada
   alternative_names: []
+  league: laliga
 - canonical_name: Las Palmas
   alternative_names: []
+  league: laliga
 - canonical_name: Leganés
   alternative_names: ['Leganes']
+  league: laliga
 - canonical_name: Málaga
   alternative_names: ['Malaga']
+  league: laliga
 - canonical_name: Osasuna
   alternative_names: ['Osasuna']
+  league: laliga
 - canonical_name: 'Real Betis'
   alternative_names: ['Betis']
+  league: laliga
 - canonical_name: Real Madrid
   alternative_names: ['Real', 'RM']
+  league: laliga
 - canonical_name: Real Sociedad
   alternative_names: []
+  league: laliga
 - canonical_name: Sevilla
   alternative_names: []
+  league: laliga
 - canonical_name: Sporting Gijón
   alternative_names: ['Gijón', 'Gijon']
+  league: laliga
 - canonical_name: Valencia
   alternative_names: []
+  league: laliga
 - canonical_name: Villarreal
   alternative_names: []
+  league: laliga
 
 # Germany
 - canonical_name: Bayern Munich
   alternative_names: ['Munich', 'Bayern']
+  league: bundesliga
 - canonical_name: Borussia Dortmund
   alternative_names: ['Borussia', 'Dortmund', 'BVB']
+  league: bundesliga
 - canonical_name: Hamburger SV
   alternative_names: ['Hamburger']
+  league: bundesliga
 - canonical_name: Werder Bremen
   alternative_names: ['Werder']
+  league: bundesliga
 - canonical_name: Schalke 04
   alternative_names: ['Schalke']
+  league: bundesliga
 - canonical_name: Eintracht Frankfurt
   alternative_names: ['Eintracht']
+  league: bundesliga
 - canonical_name: FC Köln
   alternative_names: ['Köln', 'Koln']
+  league: bundesliga
 - canonical_name: Hertha BSC
   alternative_names: ['Hertha']
+  league: bundesliga
 - canonical_name: Borussia Mönchengladbach
   alternative_names: ['Mönchengladbach', 'Monchengladbach']
+  league: bundesliga
 - canonical_name: Bayer 04 Leverkusen
   alternative_names: ['Leverkusen']
+  league: bundesliga
 - canonical_name: VfL Wolfsburg
   alternative_names: ['Wolfsburg']
+  league: bundesliga
 - canonical_name: FSV Mainz 05
   alternative_names: [' Mainz']
+  league: bundesliga
 - canonical_name: TSG 1899 Hoffenheim
   alternative_names: ['Hoffenheim']
+  league: bundesliga
 - canonical_name: FC Augsburg
   alternative_names: ['Augsburg']
+  league: bundesliga
 - canonical_name: SC Freiburg
   alternative_names: ['Freiburg']
+  league: bundesliga
 - canonical_name: RB Leipzig
   alternative_names: ['Leipzig']
+  league: bundesliga
 - canonical_name: VfB Stuttgart
   alternative_names: ['Stuttgart']
+  league: bundesliga
 - canonical_name: Hannover 96
   alternative_names: ['Hannover']
+  league: bundesliga
 
 # Italy
 - canonical_name: Juventus
   alternative_names: ['JFC', 'Juve']
+  league: seriea
 - canonical_name: Inter
   alternative_names: ['Internazionale']
+  league: seriea
 - canonical_name: Atalanta
   alternative_names: []
+  league: seriea
 - canonical_name: Benevento
   alternative_names: []
+  league: seriea
 - canonical_name: Bologna
   alternative_names: []
+  league: seriea
 - canonical_name: Cagliari
   alternative_names: []
+  league: seriea
 - canonical_name: Chievo
   alternative_names: []
+  league: seriea
 - canonical_name: Crotone
   alternative_names: []
+  league: seriea
 - canonical_name: Fiorentina
   alternative_names: []
+  league: seriea
 - canonical_name: Genoa
   alternative_names: []
+  league: seriea
 - canonical_name: Hellas Verona
   alternative_names: ['Hellas']
+  league: seriea
 - canonical_name: Lazio
   alternative_names: []
+  league: seriea
 - canonical_name: Milan
   alternative_names: []
+  league: seriea
 - canonical_name: Napoli
   alternative_names: []
+  league: seriea
 - canonical_name: Roma
   alternative_names: []
+  league: seriea
 - canonical_name: Sampdoria
   alternative_names: []
+  league: seriea
 - canonical_name: Sassuolo
   alternative_names: []
+  league: seriea
 - canonical_name: SPAL
   alternative_names: []
+  league: seriea
 - canonical_name: Torino
   alternative_names: []
+  league: seriea
 - canonical_name: Udinese
   alternative_names: []
+  league: seriea
 
 # France
 - canonical_name: PSG
   alternative_names: ['Paris Saint-Germain', 'Paris Saint Germain', 'Paris SG']
+  league: ligue1
 - canonical_name: Monaco
   alternative_names: ['ASM']
+  league: ligue1
 - canonical_name: Angers
   alternative_names: []
+  league: ligue1
 - canonical_name: Bastia
   alternative_names: []
+  league: ligue1
 - canonical_name: Bordeaux
   alternative_names: []
+  league: ligue1
 - canonical_name: Caen
   alternative_names: []
+  league: ligue1
 - canonical_name: Dijon
   alternative_names: []
+  league: ligue1
 - canonical_name: Guingamp
   alternative_names: []
+  league: ligue1
 - canonical_name: Lille
   alternative_names: []
+  league: ligue1
 - canonical_name: Lorient
   alternative_names: []
+  league: ligue1
 - canonical_name: Olympique Lyonnais
   alternative_names: ['Olympique', 'Lyon']
+  league: ligue1
 - canonical_name: Marseille
   alternative_names: []
+  league: ligue1
 - canonical_name: Metz
   alternative_names: []
+  league: ligue1
 - canonical_name: Montpellier
   alternative_names: []
+  league: ligue1
 - canonical_name: Nancy
   alternative_names: []
+  league: ligue1
 - canonical_name: Nantes
   alternative_names: []
+  league: ligue1
 - canonical_name: Nice
   alternative_names: []
+  league: ligue1
 - canonical_name: Rennes
   alternative_names: []
+  league: ligue1
 - canonical_name: Rennes
   alternative_names: []
+  league: ligue1
 - canonical_name: Saint-Étienne
   alternative_names: ['Saint Étienne', 'Saint-Etienne', 'Saint Etienne']
+  league: ligue1
 - canonical_name: Toulouse
   alternative_names: []
+  league: ligue1
 
 # Portugal
 - canonical_name: Benfica
   alternative_names: []
+  league: primeiraliga
 - canonical_name: Porto
   alternative_names: []
+  league: primeiraliga
 - canonical_name: Arouca
   alternative_names: []
+  league: primeiraliga
 - canonical_name: Belenenses
   alternative_names: []
+  league: primeiraliga
 - canonical_name: Boavista
   alternative_names: []
+  league: primeiraliga
 - canonical_name: Braga
   alternative_names: []
+  league: primeiraliga
 - canonical_name: Chaves
   alternative_names: []
+  league: primeiraliga
 - canonical_name: Estoril
   alternative_names: []
+  league: primeiraliga
 - canonical_name: Feirense
   alternative_names: []
+  league: primeiraliga
 - canonical_name: Marítimo
   alternative_names: ['Maritimo']
+  league: primeiraliga
 - canonical_name: Moreirense
   alternative_names: []
+  league: primeiraliga
 - canonical_name: Nacional
   alternative_names: []
+  league: primeiraliga
 - canonical_name: Paços de Ferreira
   alternative_names: ['Pacos de Ferreira']
+  league: primeiraliga
 - canonical_name: Rio Ave
   alternative_names: []
+  league: primeiraliga
 - canonical_name: Sporting CP
   alternative_names: ['Sporting']
+  league: primeiraliga
 - canonical_name: Tondela
   alternative_names: []
+  league: primeiraliga
 - canonical_name: Vitória de Guimarães
   alternative_names: [Vitoria de Guimaraes]
+  league: primeiraliga
 - canonical_name: Vitória de Setúbal
   alternative_names: ['Vitoria de Setubal']
+  league: primeiraliga
 
 # Russia
 - canonical_name: Zenit
   alternative_names: []
+  league: rfpl
 - canonical_name: CSKA
   alternative_names: []
+  league: rfpl
 - canonical_name: Spartak
   alternative_names: []
+  league: rfpl
 - canonical_name: Amkar
   alternative_names: []
+  league: rfpl
 - canonical_name: Anzhi
   alternative_names: ['Makhachkala']
+  league: rfpl
 - canonical_name: Arsenal Tula
   alternative_names: []
+  league: rfpl
 - canonical_name: Dynamo Moscow
   alternative_names: []
+  league: rfpl
 - canonical_name: Krasnodar
   alternative_names: []
+  league: rfpl
 - canonical_name: Lokomotiv
   alternative_names: []
+  league: rfpl
 - canonical_name: Orenburg
   alternative_names: []
+  league: rfpl
 - canonical_name: Rostov
   alternative_names: []
+  league: rfpl
 - canonical_name: Rubin Kazan
   alternative_names: ['Rubin']
+  league: rfpl
 - canonical_name: FC Akhmat Grozny
   alternative_names: ['Terek']
+  league: rfpl
 - canonical_name: Tom Tomsk
   alternative_names: ['Tomsk']
+  league: rfpl
 - canonical_name: Ufa
   alternative_names: []
+  league: rfpl
 - canonical_name: Ural
   alternative_names: []
+  league: rfpl
 
 # MLS
 - canonical_name: Sounders
   alternative_names: ['Seattle']
+  league: mls
 - canonical_name: Timber
   alternative_names: ['Portland']
+  league: mls
 - canonical_name: Atlanta United FC
   alternative_names: ['Atlanta']
+  league: mls
 - canonical_name: Chicago Fire
   alternative_names: ['Chicago']
+  league: mls
 - canonical_name: Columbus Crew
   alternative_names: ['Columbus']
+  league: mls
 - canonical_name: D.C. United
   alternative_names: ['DC United']
+  league: mls
 - canonical_name: Montreal Impact
   alternative_names: ['Montreal']
+  league: mls
 - canonical_name: New England Revolution
   alternative_names: ['New England', 'NE Revolution']
+  league: mls
 - canonical_name: New York City
   alternative_names: []
+  league: mls
 - canonical_name: New York Red Bulls
   alternative_names: ['Red Bulls']
+  league: mls
 - canonical_name: Orlando City SC
   alternative_names: ['Orlando']
+  league: mls
 - canonical_name: Philadelphia Union
   alternative_names: ['Philadelphia']
+  league: mls
 - canonical_name: Toronto FC
   alternative_names: ['Toronto']
+  league: mls
 - canonical_name: Colorado Rapids
   alternative_names: ['Colorado']
+  league: mls
 - canonical_name: FC Dallas
   alternative_names: ['Dallas']
+  league: mls
 - canonical_name: Houston Dynamo
   alternative_names: ['Houston']
+  league: mls
 - canonical_name: LA Galaxy
   alternative_names: ['Galaxy']
+  league: mls
 - canonical_name: Minnesota United FC
   alternative_names: ['Minnesota']
+  league: mls
 - canonical_name: Real Salt Lake
   alternative_names: ['Salt Lake']
+  league: mls
 - canonical_name: San Jose Earthquakes
   alternative_names: ['San Jose', 'Earthquakes']
+  league: mls
 - canonical_name: Sporting Kansas City
   alternative_names: ['Kansas City']
+  league: mls
 - canonical_name: Vancouver Whitecaps FC
   alternative_names: ['Vancouver', 'Whitecaps']
+  league: mls
