@@ -15,12 +15,15 @@ blacklisted_adjectives:
 - bulgarian
 - brazilian
 - colombian
+- costa
+- finishing
+- cr7
 
 blacklisted_adjective_patterns:
 - ^[0-9]+(th|st|nd|rd)$
 - ^(?!.*[a-zA-Z]).*$
 
-max_adjectives_per_team: 5
+max_adjectives_per_team: 3
 
 common_adjectives_to_exclude: 100
 
