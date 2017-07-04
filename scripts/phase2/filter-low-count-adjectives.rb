@@ -1,3 +1,5 @@
+# Filter out adjectives with low counts.
+
 require 'json'
 require 'yaml'
 

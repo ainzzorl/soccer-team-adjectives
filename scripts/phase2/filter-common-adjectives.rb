@@ -1,7 +1,7 @@
+# Filter out most common adjectives.
+
 require 'json'
 require 'yaml'
-
-Dir[File.dirname(__FILE__) + '/../../lib/soccer_team_adjectives/*.rb'].each { |file| require file }
 
 config = YAML.load_file './config/config.yaml'
 

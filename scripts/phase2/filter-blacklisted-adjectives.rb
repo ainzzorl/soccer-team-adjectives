@@ -1,3 +1,5 @@
+# Filter out blacklisted adjectives.
+
 require 'json'
 require 'yaml'
 

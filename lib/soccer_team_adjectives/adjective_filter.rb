@@ -1,5 +1,5 @@
 module SoccerTeamAdjectives
-  # Determines adjectives that must be excluded from the result.
+  # Filters out blacklisted adjectives.
   class AdjectiveFilter
     def initialize(config)
       @config = config
