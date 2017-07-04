@@ -7,7 +7,7 @@ include Treat::Core::DSL
 
 Dir[File.dirname(__FILE__) + '/../../lib/soccer_team_adjectives/*.rb'].each { |file| require file }
 
-INPUT_FILE = './input/soccer_comments_and_ids_2017.csv'.freeze
+INPUT_FILE = './input/soccer-comments.csv'.freeze
 OUTPUT_FILE = './tmp/phase1/mapped.dat'.freeze
 
 config = YAML.load_file './config/config.yaml'
