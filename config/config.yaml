@@ -1,4 +1,5 @@
 blacklisted_adjectives:
+# Nationalities
 - spanish
 - german
 - english
@@ -13,6 +14,7 @@ blacklisted_adjectives:
 - bulgarian
 - brazilian
 - colombian
+# Numbers
 - one
 - two
 - three
@@ -23,11 +25,14 @@ blacklisted_adjectives:
 - eight
 - nine
 - ten
+# Non-adjectives
 - costa
 - finishing
 - cr7
-- west
 - foul
+# Other
+- west # Usually West Ham or West Bromwich
+
 
 blacklisted_adjective_patterns:
 - ^[0-9]+(th|st|nd|rd)$
