@@ -295,9 +295,6 @@
 - canonical_name: Rennes
   alternative_names: []
   league: ligue1
-- canonical_name: Rennes
-  alternative_names: []
-  league: ligue1
 - canonical_name: Saint-Étienne
   alternative_names: ['Saint Étienne', 'Saint-Etienne', 'Saint Etienne']
   league: ligue1
