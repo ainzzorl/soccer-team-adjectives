@@ -7,46 +7,40 @@ module SoccerTeamAdjectives
       build_team_name_map(team_data)
     end
 
-    # TODO: cleanup and delete the exception.
-    # rubocop:disable MethodLength
-    # rubocop:disable PerceivedComplexity
-    # rubocop:disable AbcSize
     def extract(segment)
-      segment.tokenize
-      teams = Set.new
-      word_index = 0
-      last_two_words = []
-      last_three_words = []
-      word_set = segment.words.map { |w| w.to_s.downcase }.to_set.inspect
-      segment.each_word do |w|
-        word = w.to_s.downcase
-        last_two_words.shift if word_index > 1
-        last_three_words.shift if word_index > 2
-        last_two_words << word
-        last_three_words << word
-        if @team_name_map.key?(word)
-          if SPECIAL_CASE_WORDS.include?(word)
-            result = extract_special_case(w.to_s, word_index, word_set)
-            teams.add(result) unless result.nil?
+      segment.tokenize # This line is slower than everything else combined.
+      result = Set.new
+      ngram_map = get_ngrams(segment, 3) # MapnN->[list of n-grams]
+      word_set = ngram_map[1].map(&:downcase).to_set
+      ngram_map.values.each do |ngrams|
+        ngrams.each_with_index do |ngram, index|
+          downcased = ngram.downcase
+          next unless @team_name_map.key?(downcased)
+          if SPECIAL_CASE_WORDS.include?(downcased)
+            res = extract_special_case(ngram, index, word_set)
+            result.add(res) unless res.nil?
           else
-            teams.add(@team_name_map[word])
+            result.add(@team_name_map[downcased])
           end
         end
-        if word_index > 0 && @team_name_map.key?(last_two_words.join(' '))
-          teams.add(@team_name_map[last_two_words.join(' ')])
-        end
-        if word_index > 1 && @team_name_map.key?(last_three_words.join(' '))
-          teams.add(@team_name_map[last_three_words.join(' ')])
-        end
-        word_index += 1
       end
-      teams
+      result
     end
-    # rubocop:enable AbcSize
-    # rubocop:enable PerceivedComplexity
-    # rubocop:enable MethodLength
 
     private
+
+    def get_ngrams(segment, maxn)
+      (1..maxn).map do |n|
+        current = []
+        result = []
+        segment.words.each_with_index do |word, index|
+          current.shift if index >= n
+          current << word
+          result << current.join(' ') if index >= n - 1
+        end
+        [n, result]
+      end.to_h
+    end
 
     def capitalized?(word)
       word.to_s.capitalize == word.to_s
@@ -75,7 +69,6 @@ module SoccerTeamAdjectives
     # Precision is much more important in this case.
     def extract_special_case(word, word_index, word_set)
       return nil if word_index.zero? || !capitalized?(word)
-
       case word.downcase
       when 'real'
         @team_name_map['real'] unless %w[betis sociedad salt].any? { |o| word_set.include?(o) }
