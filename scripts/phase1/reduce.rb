@@ -1,3 +1,5 @@
+# Aggregate team/adjective counts across all comments.
+
 require 'json'
 
 total_counts = {}
@@ -15,6 +17,8 @@ end
 
 result = {}
 
+# Sorting adjectives by count.
+# Unnecessary but makes intermediate results more readable.
 total_counts.keys.each do |team|
   result[team] = []
   total_counts[team].sort { |a, b| b[1] <=> a[1] }.each do |key, value|
