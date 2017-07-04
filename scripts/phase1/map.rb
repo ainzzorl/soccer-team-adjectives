@@ -14,14 +14,7 @@ config = YAML.load_file './config/config.yaml'
 
 teams = YAML.load_file './config/teams.yaml'
 
-team_name_map = {}
-teams.each do |team|
-  team_name_map[team['canonical_name'].downcase] = team['canonical_name']
-  team['alternative_names'].each do |alt|
-    team_name_map[alt.downcase] = team['canonical_name']
-  end
-end
-team_name_extractor = SoccerTeamAdjectives::TeamNameExtractor.new(team_name_map, config['common_word_team_names'])
+team_name_extractor = SoccerTeamAdjectives::TeamNameExtractor.new(teams, config['common_word_team_names'])
 
 output_file = File.open(OUTPUT_FILE, 'w')
 

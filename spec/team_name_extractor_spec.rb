@@ -1,40 +1,29 @@
+require 'yaml'
 require 'treat'
 include Treat::Core::DSL
 
 RSpec.describe SoccerTeamAdjectives::TeamNameExtractor do
-  let(:team_name_map) do
-    {
-      'teamonefull' => 'teamone',
-      'teamonepartone teamoneparttwo' => 'teamone',
-      'teamonepartone teamoneparttwo teamonepartthree' => 'teamone',
-      'teamtwofull' => 'teamtwo',
-      'teamtwopartone teamtwoparttwo' => 'teamtwo',
-      'teamtwopartone teamtwoparttwo teamtwopartthree' => 'teamtwo',
-      'real' => 'Real Madrid'
-    }
-  end
+  let(:team_data) { YAML.load_file './config/teams.yaml' }
 
   let(:common_word_team_names) { %w[real city nice] }
 
-  let(:extractor) { SoccerTeamAdjectives::TeamNameExtractor.new(team_name_map, common_word_team_names) }
+  let(:extractor) { SoccerTeamAdjectives::TeamNameExtractor.new(team_data, common_word_team_names) }
 
   describe 'extract' do
     it 'extracts 1 word matches' do
-      expect(extractor.extract(sentence('Prefix TeamoneFull Postfix')).to_a).to eq(['teamone'])
+      expect(extractor.extract(sentence('Prexi Bayern Postfix')).to_a).to eq(['Bayern Munich'])
     end
 
     it 'extracts 2 word matches' do
-      expect(extractor.extract(sentence('Prefix TeamonePartone TeamoneParttwo Postfix')).to_a).to eq(['teamone'])
+      expect(extractor.extract(sentence('Prefix Crystal Palace Postfix')).to_a).to eq(['Crystal Palace'])
     end
 
     it 'extracts 3 word matches' do
-      expect(extractor.extract(sentence('Prefix TeamonePartone TeamoneParttwo TeamonePartthree Postfix')).to_a)
-        .to eq(['teamone'])
+      expect(extractor.extract(sentence('Prefix Paris Saint Germain Postfix')).to_a).to eq(['PSG'])
     end
 
     it 'extracts multiple teams' do
-      expect(extractor.extract(sentence('Prefix TeamoneFull Middle TeamtwoFull Postfix')).to_a)
-        .to eq(%w[teamone teamtwo])
+      expect(extractor.extract(sentence('Prefix Torino Middle Udinese Postfix')).to_a).to eq(%w[Torino Udinese])
     end
 
     it 'extracts nothing if there\'s nothing' do

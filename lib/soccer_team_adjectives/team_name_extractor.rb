@@ -1,9 +1,9 @@
 module SoccerTeamAdjectives
   # Extract team names from a segment.
   class TeamNameExtractor
-    def initialize(team_name_map, common_word_team_names)
-      @team_name_map = team_name_map
+    def initialize(team_data, common_word_team_names)
       @common_word_team_names = common_word_team_names.to_set
+      build_team_name_map(team_data)
     end
 
     # TODO: cleanup and delete the exception.
@@ -44,6 +44,16 @@ module SoccerTeamAdjectives
 
     def capitalized?(word)
       word.to_s.capitalize == word.to_s
+    end
+
+    def build_team_name_map(team_data)
+      @team_name_map = {}
+      team_data.each do |team|
+        @team_name_map[team['canonical_name'].downcase] = team['canonical_name']
+        team['alternative_names'].each do |alt|
+          @team_name_map[alt.downcase] = team['canonical_name']
+        end
+      end
     end
   end
 end
