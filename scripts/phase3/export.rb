@@ -1,3 +1,5 @@
+# Export results to .csv
+
 require 'json'
 require 'yaml'
 

@@ -1,3 +1,5 @@
+# Take top N adjectives for each team.
+
 require 'json'
 require 'yaml'
 

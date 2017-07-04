@@ -1,3 +1,14 @@
+# Score adjectives.
+# "Local frequency (adjective, team)" = count(adjective|team)/count(all adjectives for the team)
+# "Global frequency (adjective)" = count(adjective|team)/count(adjective across all team)
+# Score (adjective, team) = X * (local frequency) + Y * (global frequency)
+#
+# The higher the local frequency, the more often the adjective is used to describe the team.
+# The higher the global frequency, the more often the adjective is used to describe ANY team in the data set.
+#
+# Words with high global frequency tend to be very generic.
+# Choose Y < 0 to promote more unusual (and likely more interesting) adjectives.
+
 require 'json'
 require 'yaml'
 
@@ -32,7 +43,6 @@ data.keys.each do |team|
   data[team].each do |entry|
     entry['local_frequency'] = entry['count'].to_f / total_adjective_team_count
     entry['global_frequency'] = adjectives[entry['adjective']][:ratio]
-    entry['relative_ratio'] = entry['local_frequency'] / adjectives[entry['adjective']][:ratio]
     entry['score'] = entry['local_frequency'] * local_frequency_coefficient +
                      entry['global_frequency'] * global_frequency_coefficient
   end
