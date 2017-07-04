@@ -10,11 +10,9 @@ Dir[File.dirname(__FILE__) + '/../../lib/soccer_team_adjectives/*.rb'].each { |f
 INPUT_FILE = './input/soccer-comments.csv'.freeze
 OUTPUT_FILE = './tmp/phase1/mapped.dat'.freeze
 
-config = YAML.load_file './config/config.yaml'
-
 teams = YAML.load_file './config/teams.yaml'
 
-team_name_extractor = SoccerTeamAdjectives::TeamNameExtractor.new(teams, config['common_word_team_names'])
+team_name_extractor = SoccerTeamAdjectives::TeamNameExtractor.new(teams)
 
 output_file = File.open(OUTPUT_FILE, 'w')
 
