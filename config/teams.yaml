@@ -3,7 +3,7 @@
   alternative_names: ['Gunners']
   league: epl
 - canonical_name: Manchester United
-  alternative_names: ['Red Devils', 'MU']
+  alternative_names: ['Red Devils', 'MU', 'Man United', 'United']
   league: epl
 - canonical_name: Chelsea
   alternative_names: ['Pensioners', 'CFC']
@@ -12,7 +12,7 @@
   alternative_names: ['LFC']
   league: epl
 - canonical_name: Manchester City
-  alternative_names: ['The Citizens', 'The Sky Blues', 'Man City', 'ManCity']
+  alternative_names: ['The Citizens', 'The Sky Blues', 'Man City', 'ManCity', 'City']
   league: epl
 - canonical_name: Tottenham
   alternative_names: ['Spurs', 'Lilywhites']
