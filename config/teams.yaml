@@ -409,11 +409,11 @@
   league: rfpl
 
 # MLS
-- canonical_name: Sounders
-  alternative_names: ['Seattle']
+- canonical_name: Seattle Sounders
+  alternative_names: ['Seattle', 'Sounders']
   league: mls
-- canonical_name: Timber
-  alternative_names: ['Portland']
+- canonical_name: Portland Timber
+  alternative_names: ['Portland', 'Timber']
   league: mls
 - canonical_name: Atlanta United FC
   alternative_names: ['Atlanta']
@@ -475,3 +475,52 @@
 - canonical_name: Vancouver Whitecaps FC
   alternative_names: ['Vancouver', 'Whitecaps']
   league: mls
+
+# Scotland
+- canonical_name: Celtic
+  alternative_names: ['The Bhoys', 'The Celts', 'The Hoops']
+  league: scottishpremiership
+- canonical_name: Rangers
+  alternative_names: ['The Gers', 'The Teddy Bears']
+  league: scottishpremiership
+
+# Ukraine
+- canonical_name: Shakhtar Donetsk
+  alternative_names: []
+  league: upl
+- canonical_name: Dynamo Kyiv
+  alternative_names: ['Dynamo Kiev']
+  league: upl
+- canonical_name: Dnipro Dnipropetrovsk
+  alternative_names: [Dnipro]
+  league: upl
+
+# Netherlands
+- canonical_name: Feyenoord
+  alternative_names: []
+  league: eredivisie
+- canonical_name: AFC Ajax
+  alternative_names: ['Ajax']
+  league: eredivisie
+- canonical_name: PSV Eindhoven
+  alternative_names: ['PSV', 'Philips Sport Vereniging']
+  league: eredivisie
+
+# Switzerland
+- canonical_name: FC Basel
+  alternative_names: ['Basel']
+  league: swisssuperleague
+- canonical_name: Young Boys
+  alternative_names: []
+  league: swisssuperleague
+
+# Turkey
+- canonical_name: Beşiktaş
+  alternative_names: ['Besiktas']
+  league: superlig
+- canonical_name: Fenerbahçe
+  alternative_names: ['Fenerbahce']
+  league: superlig
+- canonical_name: Galatasaray
+  alternative_names: []
+  league: superlig
