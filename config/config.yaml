@@ -22,6 +22,8 @@ blacklisted_adjectives:
 - argentinian
 - dutch
 - belgian
+- iranian
+- israeli
 # Numbers
 - one
 - two
@@ -37,7 +39,7 @@ blacklisted_adjectives:
 - blue
 - yellow
 - white
-
+- black
 # Non-adjectives
 - costa
 - finishing
@@ -46,17 +48,28 @@ blacklisted_adjectives:
 - live
 - key
 - saint-etienne
+- rid
+- s04
+- to
+- ro16
 # Other
 - west # Usually West Ham or West Bromwich
 - east
 - top
 - mid
 - low
+- extra
+- added
+- once
+- twice
 
 blacklisted_adjective_patterns:
 - ^[0-9]+(th|st|nd|rd)$ # 1st, 5th, etc.
 - ^(?!.*[a-zA-Z]).*$ # No letters
 - ^[0-9]+(m|mil)$ # Prices: 80m, 100mil, etc.
+- ^u[0-9]+$ # u21, etc.
+- ^[0-9]y+$ # y9
+- ^l[0-9]+$ # l1
 
 max_adjectives_per_team: 3
 
@@ -66,13 +79,13 @@ min_count: 5
 
 scoring:
   local_frequency_coefficient: 1
-  global_frequency_coefficient: -1
+  global_frequency_coefficient: -1.5
 
 sequence:
   phase2:
     - filter-blacklisted-adjectives
-    - filter-common-adjectives
     - score
+    - filter-common-adjectives
     - sort-teams
     - filter-low-count-adjectives
     - take-top

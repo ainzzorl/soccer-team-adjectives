@@ -130,13 +130,13 @@
   alternative_names: ['Borussia', 'Dortmund', 'BVB']
   league: bundesliga
 - canonical_name: Hamburger SV
-  alternative_names: ['Hamburger']
+  alternative_names: ['Hamburg', 'HSV']
   league: bundesliga
 - canonical_name: Werder Bremen
   alternative_names: ['Werder']
   league: bundesliga
 - canonical_name: Schalke 04
-  alternative_names: ['Schalke']
+  alternative_names: ['Schalke', 'S04']
   league: bundesliga
 - canonical_name: Eintracht Frankfurt
   alternative_names: ['Eintracht', 'Die Adler']
@@ -492,7 +492,7 @@
   alternative_names: ['Dynamo Kiev']
   league: upl
 - canonical_name: Dnipro Dnipropetrovsk
-  alternative_names: [Dnipro]
+  alternative_names: ['Dnipro']
   league: upl
 
 # Netherlands
