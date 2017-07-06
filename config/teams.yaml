@@ -136,7 +136,7 @@
   alternative_names: ['Werder']
   league: bundesliga
 - canonical_name: Schalke 04
-  alternative_names: ['Schalke', 'S04']
+  alternative_names: ['Schalke', 'S04', 'Schalke04']
   league: bundesliga
 - canonical_name: Eintracht Frankfurt
   alternative_names: ['Eintracht', 'Die Adler']
@@ -486,7 +486,7 @@
 
 # Ukraine
 - canonical_name: Shakhtar Donetsk
-  alternative_names: []
+  alternative_names: ['Shakhtar']
   league: upl
 - canonical_name: Dynamo Kyiv
   alternative_names: ['Dynamo Kiev']
