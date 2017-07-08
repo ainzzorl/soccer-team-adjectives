@@ -4,12 +4,12 @@ require 'yaml'
 
 config = YAML.load_file './config/config.yaml'
 
-command = 'cat ./tmp/phase1/reduced.json |'
+command = 'cat ./output/phase1/reduced.json |'
 
 config['sequence']['phase2'].each do |e|
   command += "bundle exec ruby ./scripts/phase2/#{e}.rb |"
 end
 
-command += 'cat > tmp/phase2/result.dat'
+command += 'cat > output/phase2/result.dat'
 
 `#{command}`

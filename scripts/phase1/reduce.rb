@@ -4,7 +4,7 @@ require 'json'
 
 total_counts = {}
 
-File.open('./tmp/phase1/mapped.dat').each_line do |line|
+File.open('./output/phase1/mapped.dat').each_line do |line|
   line_counts = JSON.parse(line)['team_adjectives']
   line_counts.keys.each do |team|
     total_counts[team] = {} unless total_counts.key?(team)
@@ -26,4 +26,4 @@ total_counts.keys.each do |team|
   end
 end
 
-File.open('./tmp/phase1/reduced.json', 'w').puts JSON.pretty_generate(result)
+File.open('./output/phase1/reduced.json', 'w').puts JSON.pretty_generate(result)
