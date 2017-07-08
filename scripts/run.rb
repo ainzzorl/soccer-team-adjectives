@@ -19,3 +19,5 @@ system 'bundle install'
 system "./scripts/phase1.rb #{input_file_path}"
 system './scripts/phase2.rb'
 system './scripts/phase3.rb'
+
+puts 'Done! The results are in ./output/phase3/'
