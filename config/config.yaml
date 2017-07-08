@@ -24,6 +24,11 @@ blacklisted_adjectives:
 - belgian
 - iranian
 - israeli
+- ukrainian
+- swiss
+- scottish
+- palestinian
+- british
 # Numbers
 - one
 - two
@@ -40,6 +45,7 @@ blacklisted_adjectives:
 - yellow
 - white
 - black
+- green
 # Non-adjectives
 - costa
 - finishing
@@ -52,6 +58,8 @@ blacklisted_adjectives:
 - s04
 - to
 - ro16
+- my
+- refereeing
 # Other
 - west # Usually West Ham or West Bromwich
 - east
