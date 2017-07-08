@@ -11,7 +11,13 @@ require 'csv'
 
 Dir[File.dirname(__FILE__) + '/../../lib/soccer_team_adjectives/*.rb'].each { |file| require file }
 
-INPUT_FILE_PATH = './input/soccer-comments.csv'.freeze
+unless ARGV.length == 1
+  puts 'Usage: map.rb <path-to-input-file>'
+  puts 'The file must be a .csv with comment body in the first column and comment id in the second.'
+  exit 1
+end
+
+input_file_path = ARGV[0]
 OUTPUT_FILE_PATH = './output/phase1/mapped.dat'.freeze
 
 team_name_extractor = SoccerTeamAdjectives::TeamNameExtractor.new(YAML.load_file('./config/teams.yaml'))
@@ -24,7 +30,7 @@ output_file = File.open(OUTPUT_FILE_PATH, 'w')
 # Note that a comment can span over more than one line in the file,
 # so can't use something like wc to find out the total number of comments in the dataset.
 # The entire dataset is less than 1G and fits comfortably in RAM.
-csv_rows = CSV.read(INPUT_FILE_PATH)
+csv_rows = CSV.read(input_file_path)
 total_comments = csv_rows.size
 
 start_time = Time.now
