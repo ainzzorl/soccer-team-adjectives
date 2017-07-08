@@ -11,7 +11,7 @@ require 'csv'
 
 Dir[File.dirname(__FILE__) + '/../../lib/soccer_team_adjectives/*.rb'].each { |file| require file }
 
-INPUT_FILE_PATH = './input/soccer_comments_and_ids_2016_11.csv'.freeze
+INPUT_FILE_PATH = './input/soccer-comments.csv'.freeze
 OUTPUT_FILE_PATH = './tmp/phase1/mapped.dat'.freeze
 
 team_name_extractor = SoccerTeamAdjectives::TeamNameExtractor.new(YAML.load_file('./config/teams.yaml'))
