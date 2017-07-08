@@ -12,4 +12,4 @@ end
 
 command += 'cat > output/phase2/result.dat'
 
-`#{command}`
+system command
