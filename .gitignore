@@ -1,4 +1,5 @@
-input/
+input/*
+!input/sample.csv
 output/
 tmp/
 
