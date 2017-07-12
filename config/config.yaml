@@ -80,7 +80,7 @@ blacklisted_adjective_patterns:
 - ^[0-9]y+$ # y9
 - ^l[0-9]+$ # l1
 
-max_adjectives_per_team: 3
+max_adjectives_per_entity: 3
 
 common_adjectives_to_exclude: 100
 
@@ -95,6 +95,6 @@ sequence:
     - filter-blacklisted-adjectives
     - score
     - filter-common-adjectives
-    - sort-teams
+    - sort-entities
     - filter-low-count-adjectives
     - take-top

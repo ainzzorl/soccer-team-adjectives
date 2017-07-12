@@ -1,16 +1,16 @@
-# Aggregate team/adjective counts across all comments.
+# Aggregate entity/adjective counts across all comments.
 
 require 'json'
 
 total_counts = {}
 
 File.open('./output/phase1/mapped.dat').each_line do |line|
-  line_counts = JSON.parse(line)['team_adjectives']
-  line_counts.keys.each do |team|
-    total_counts[team] = {} unless total_counts.key?(team)
-    line_counts[team].keys.each do |adjective|
-      total_counts[team][adjective] = 0 unless total_counts[team].key?(adjective)
-      total_counts[team][adjective] += 1
+  line_counts = JSON.parse(line)['entity_adjectives']
+  line_counts.keys.each do |entity|
+    total_counts[entity] = {} unless total_counts.key?(entity)
+    line_counts[entity].keys.each do |adjective|
+      total_counts[entity][adjective] = 0 unless total_counts[entity].key?(adjective)
+      total_counts[entity][adjective] += 1
     end
   end
 end
@@ -19,10 +19,10 @@ result = {}
 
 # Sorting adjectives by count.
 # Unnecessary but makes intermediate results more readable.
-total_counts.keys.each do |team|
-  result[team] = []
-  total_counts[team].sort { |a, b| b[1] <=> a[1] }.each do |key, value|
-    result[team] << { adjective: key, count: value }
+total_counts.keys.each do |entity|
+  result[entity] = []
+  total_counts[entity].sort { |a, b| b[1] <=> a[1] }.each do |key, value|
+    result[entity] << { adjective: key, count: value }
   end
 end
 

@@ -5,19 +5,19 @@ require 'yaml'
 
 config = YAML.load_file './config/config.yaml'
 
-teams = YAML.load_file './config/teams.yaml'
+entities = YAML.load_file './config/teams.yaml'
 
 data = JSON.parse(ARGF.read)
 
-leagues = teams.map { |t| t['league'] }.uniq
+leagues = entities.map { |t| t['league'] }.uniq
 
 leagues.each do |league|
   file = File.open("./output/phase3/#{league}.csv", 'w')
-  league_teams = teams.select { |t| t['league'] == league }.sort_by { |t| t['canonical_name'] }
-  league_teams.each do |team|
-    team_data = data.key?(team['canonical_name']) ? data[team['canonical_name']] : []
-    adjectives = team_data.map { |e| e['adjective'] }
-    adjectives.push('N/A') while adjectives.size < config['max_adjectives_per_team']
-    file.puts(team['canonical_name'] + ';' + adjectives.join(';'))
+  league_entities = entities.select { |t| t['league'] == league }.sort_by { |t| t['canonical_name'] }
+  league_entities.each do |entity|
+    entity_data = data.key?(entity['canonical_name']) ? data[entity['canonical_name']] : []
+    adjectives = entity_data.map { |e| e['adjective'] }
+    adjectives.push('N/A') while adjectives.size < config['max_adjectives_per_entity']
+    file.puts(entity['canonical_name'] + ';' + adjectives.join(';'))
   end
 end

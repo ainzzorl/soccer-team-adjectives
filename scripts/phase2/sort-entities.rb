@@ -1,5 +1,5 @@
-# Sort teams by total adjective count.
-# Unnecessary, but makes the output more readable: most popular teams are on top.
+# Sort entities by total adjective count.
+# Unnecessary, but makes the output more readable: most popular entities are on top.
 
 require 'json'
 

@@ -1,4 +1,4 @@
-module SoccerTeamAdjectives
+module EntityAdjectives
   # Filters out blacklisted adjectives.
   class AdjectiveFilter
     def initialize(config)

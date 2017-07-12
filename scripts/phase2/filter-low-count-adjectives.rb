@@ -7,8 +7,8 @@ config = YAML.load_file './config/config.yaml'
 
 data = JSON.parse(ARGF.read)
 
-data.keys.each do |team|
-  data[team].reject! do |entry|
+data.keys.each do |entity|
+  data[entity].reject! do |entry|
     entry['count'] < config['min_count']
   end
 end

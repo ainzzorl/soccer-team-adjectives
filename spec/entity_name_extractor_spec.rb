@@ -2,10 +2,10 @@ require 'yaml'
 require 'treat'
 include Treat::Core::DSL
 
-RSpec.describe SoccerTeamAdjectives::TeamNameExtractor do
-  let(:team_data) { YAML.load_file './config/teams.yaml' }
+RSpec.describe EntityAdjectives::EntityNameExtractor do
+  let(:entity_data) { YAML.load_file './config/teams.yaml' }
 
-  let(:extractor) { SoccerTeamAdjectives::TeamNameExtractor.new(team_data) }
+  let(:extractor) { EntityAdjectives::EntityNameExtractor.new(entity_data) }
 
   describe 'extract' do
     it 'extracts 1 word matches' do
@@ -20,7 +20,7 @@ RSpec.describe SoccerTeamAdjectives::TeamNameExtractor do
       expect(extractor.extract(sentence('Prefix Paris Saint Germain Postfix')).to_a).to eq(['PSG'])
     end
 
-    it 'extracts multiple teams' do
+    it 'extracts multiple entitites' do
       expect(extractor.extract(sentence('Prefix Torino Middle Udinese Postfix')).to_a).to eq(%w[Torino Udinese])
     end
 
@@ -39,7 +39,7 @@ RSpec.describe SoccerTeamAdjectives::TeamNameExtractor do
         end
 
         it 'does not extract capitalized matches from the beginning' do
-          expect(extractor.extract(sentence('Real can mean the team or not')).to_a).to eq([])
+          expect(extractor.extract(sentence('Real can mean the entity or not')).to_a).to eq([])
         end
 
         it 'extracts the other Real if present' do
@@ -53,7 +53,7 @@ RSpec.describe SoccerTeamAdjectives::TeamNameExtractor do
         end
 
         it 'extracts the other United if present' do
-          expect(extractor.extract(sentence('His favorite team is DC United')).to_a).to eq(['D.C. United'])
+          expect(extractor.extract(sentence('His favorite entity is DC United')).to_a).to eq(['D.C. United'])
         end
       end
 
@@ -69,7 +69,7 @@ RSpec.describe SoccerTeamAdjectives::TeamNameExtractor do
 
       context 'Nice' do
         it 'extracts capitalized matches from middle' do
-          expect(extractor.extract(sentence('French teams like Nice')).to_a).to eq(['Nice'])
+          expect(extractor.extract(sentence('French entitites like Nice')).to_a).to eq(['Nice'])
         end
       end
     end

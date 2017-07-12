@@ -1,5 +1,5 @@
 # For each comment in the data set
-# find out what teams are mentioned in it and what adjectives are used around them.
+# find out what entities are mentioned in it and what adjectives are used around them.
 #
 # This is by far the slowest step in the entire process.
 # It can be parallelized if it becomes too slow.
@@ -9,7 +9,7 @@ require 'set'
 require 'json'
 require 'csv'
 
-Dir[File.dirname(__FILE__) + '/../../lib/soccer_team_adjectives/*.rb'].each { |file| require file }
+Dir[File.dirname(__FILE__) + '/../../lib/entity_adjectives/*.rb'].each { |file| require file }
 
 unless ARGV.length == 1
   puts 'Usage: map.rb <path-to-input-file>'
@@ -20,8 +20,8 @@ end
 input_file_path = ARGV[0]
 OUTPUT_FILE_PATH = './output/phase1/mapped.dat'.freeze
 
-team_name_extractor = SoccerTeamAdjectives::TeamNameExtractor.new(YAML.load_file('./config/teams.yaml'))
-comment_data_extractor = SoccerTeamAdjectives::CommentDataExtractor.new(team_name_extractor)
+entity_name_extractor = EntityAdjectives::EntityNameExtractor.new(YAML.load_file('./config/teams.yaml'))
+comment_data_extractor = EntityAdjectives::CommentDataExtractor.new(entity_name_extractor)
 
 output_file = File.open(OUTPUT_FILE_PATH, 'w')
 
@@ -41,7 +41,7 @@ csv_rows.each_with_index do |comment, comment_index|
   end
 
   result = comment_data_extractor.extract(comment[1], comment[0])
-  output_file.puts(result.to_json) unless result[:team_adjectives].empty?
+  output_file.puts(result.to_json) unless result[:entity_adjectives].empty?
 end
 
 output_file.close

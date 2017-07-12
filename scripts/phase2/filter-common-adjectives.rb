@@ -9,8 +9,8 @@ data = JSON.parse(ARGF.read)
 
 adjective_counts = {}
 
-data.keys.each do |team|
-  data[team].each do |p|
+data.keys.each do |entity|
+  data[entity].each do |p|
     adjective = p['adjective']
     count = p['count']
     adjective_counts[adjective] = 0 unless adjective_counts.key?(adjective)
@@ -23,8 +23,8 @@ common_adjectives = adjective_counts
                     .map { |a| a[0] }
                     .take(config['common_adjectives_to_exclude'])
 
-data.keys.each do |team|
-  data[team].reject! do |entry|
+data.keys.each do |entity|
+  data[entity].reject! do |entry|
     common_adjectives.include?(entry['adjective'])
   end
 end

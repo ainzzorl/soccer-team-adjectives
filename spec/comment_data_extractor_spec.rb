@@ -1,11 +1,11 @@
 require 'yaml'
 
-RSpec.describe SoccerTeamAdjectives::CommentDataExtractor do
-  let(:team_data) { YAML.load_file './config/teams.yaml' }
+RSpec.describe EntityAdjectives::CommentDataExtractor do
+  let(:entity_data) { YAML.load_file './config/teams.yaml' }
 
-  let(:team_name_extractor) { SoccerTeamAdjectives::TeamNameExtractor.new(team_data) }
+  let(:entity_name_extractor) { EntityAdjectives::EntityNameExtractor.new(entity_data) }
 
-  let(:extractor) { SoccerTeamAdjectives::CommentDataExtractor.new(team_name_extractor) }
+  let(:extractor) { EntityAdjectives::CommentDataExtractor.new(entity_name_extractor) }
 
   let(:comment_id) { 'comment-id' }
 
@@ -20,7 +20,7 @@ RSpec.describe SoccerTeamAdjectives::CommentDataExtractor do
       it 'extracts data' do
         expect(result).to eq(
           comment_id: 'comment-id',
-          team_adjectives:
+          entity_adjectives:
           {
             'Barcelona' => { 'good' => 2, 'bad' => 1, 'blue' => 1 },
             'Arsenal' => { 'fine' => 1 },
@@ -34,15 +34,15 @@ RSpec.describe SoccerTeamAdjectives::CommentDataExtractor do
       let(:comment_body) { 'Nothing interesting here' }
 
       it 'extracts data' do
-        expect(result).to eq(comment_id: 'comment-id', team_adjectives: {})
+        expect(result).to eq(comment_id: 'comment-id', entity_adjectives: {})
       end
     end
 
-    context 'there is team and no adjectives' do
+    context 'there is entity and no adjectives' do
       let(:comment_body) { 'Barcelona with no adjectives' }
 
       it 'extracts data' do
-        expect(result).to eq(comment_id: 'comment-id', team_adjectives: {})
+        expect(result).to eq(comment_id: 'comment-id', entity_adjectives: {})
       end
     end
   end

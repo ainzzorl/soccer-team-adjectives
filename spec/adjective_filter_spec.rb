@@ -1,7 +1,7 @@
 require 'yaml'
 
-RSpec.describe SoccerTeamAdjectives::AdjectiveFilter do
-  let(:filter) { SoccerTeamAdjectives::AdjectiveFilter.new(config) }
+RSpec.describe EntityAdjectives::AdjectiveFilter do
+  let(:filter) { EntityAdjectives::AdjectiveFilter.new(config) }
 
   let(:config) { YAML.load_file './config/config.yaml' }
 

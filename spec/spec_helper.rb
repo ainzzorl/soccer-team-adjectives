@@ -17,7 +17,7 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
-Dir[File.dirname(__FILE__) + '/../lib/soccer_team_adjectives/*.rb'].each { |file| require file }
+Dir[File.dirname(__FILE__) + '/../lib/entity_adjectives/*.rb'].each { |file| require file }
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
