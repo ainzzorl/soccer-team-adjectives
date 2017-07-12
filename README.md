@@ -25,3 +25,10 @@ Count team name/adjective pairs used in the same sentence.
 
 # Phase 3
 Export results to .csv files per league.
+
+# Results and Publications
+[Original post on Reddit](https://www.reddit.com/r/soccer/comments/6mb6le/dominant_bayern_diving_barcelona_the_world/)
+
+[BBC Article](http://www.bbc.co.uk/bbcthree/item/27f450f4-007e-4dff-82dc-604cf03c644e)
+
+[Mirror Article](http://www.mirror.co.uk/sport/football/news/premier-league-three-words-arsenal-10770830)
