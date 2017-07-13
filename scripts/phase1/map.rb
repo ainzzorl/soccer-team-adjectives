@@ -20,7 +20,7 @@ end
 input_file_path = ARGV[0]
 OUTPUT_FILE_PATH = './output/phase1/mapped.dat'.freeze
 
-entity_name_extractor = EntityAdjectives::EntityNameExtractor.new(YAML.load_file('./config/teams.yaml'))
+entity_name_extractor = EntityAdjectives::EntityNameExtractor.new(YAML.load_file('./config/teams.yaml')['entities'])
 comment_data_extractor = EntityAdjectives::CommentDataExtractor.new(entity_name_extractor)
 
 output_file = File.open(OUTPUT_FILE_PATH, 'w')

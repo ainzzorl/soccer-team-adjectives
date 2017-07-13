@@ -1,7 +1,7 @@
 require 'yaml'
 
 RSpec.describe EntityAdjectives::CommentDataExtractor do
-  let(:entity_data) { YAML.load_file './config/teams.yaml' }
+  let(:entity_data) { YAML.load_file('./config/teams.yaml')['entities'] }
 
   let(:entity_name_extractor) { EntityAdjectives::EntityNameExtractor.new(entity_data) }
 

@@ -2,7 +2,7 @@
 
 require 'yaml'
 
-config = YAML.load_file './config/config.yaml'
+config = YAML.load_file('./config/teams.yaml')['config']
 
 command = 'cat ./output/phase1/reduced.json |'
 

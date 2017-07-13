@@ -3,9 +3,11 @@
 require 'json'
 require 'yaml'
 
-config = YAML.load_file './config/config.yaml'
+config_file = YAML.load_file './config/teams.yaml'
 
-entities = YAML.load_file './config/teams.yaml'
+config = config_file['config']
+
+entities = config_file['entities']
 
 data = JSON.parse(ARGF.read)
 

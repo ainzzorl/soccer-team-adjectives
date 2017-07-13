@@ -14,7 +14,7 @@ require 'yaml'
 
 Dir[File.dirname(__FILE__) + '/../../lib/entity_adjectives/*.rb'].each { |file| require file }
 
-config = YAML.load_file './config/config.yaml'
+config = YAML.load_file('./config/teams.yaml')['config']
 
 local_frequency_coefficient = config['scoring']['local_frequency_coefficient'].to_f
 global_frequency_coefficient = config['scoring']['global_frequency_coefficient'].to_f

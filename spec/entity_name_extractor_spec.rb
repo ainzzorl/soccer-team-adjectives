@@ -3,7 +3,7 @@ require 'treat'
 include Treat::Core::DSL
 
 RSpec.describe EntityAdjectives::EntityNameExtractor do
-  let(:entity_data) { YAML.load_file './config/teams.yaml' }
+  let(:entity_data) { YAML.load_file('./config/teams.yaml')['entities'] }
 
   let(:extractor) { EntityAdjectives::EntityNameExtractor.new(entity_data) }
 

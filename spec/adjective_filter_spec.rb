@@ -3,7 +3,7 @@ require 'yaml'
 RSpec.describe EntityAdjectives::AdjectiveFilter do
   let(:filter) { EntityAdjectives::AdjectiveFilter.new(config) }
 
-  let(:config) { YAML.load_file './config/config.yaml' }
+  let(:config) { YAML.load_file('./config/teams.yaml')['config'] }
 
   describe 'exclude?' do
     it 'excludes national adjectives' do

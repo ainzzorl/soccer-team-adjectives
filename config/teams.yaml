@@ -1,3 +1,106 @@
+config:
+  blacklisted_adjectives:
+  # Nationalities
+  - spanish
+  - german
+  - english
+  - french
+  - italian
+  - russian
+  - chinese
+  - american
+  - austrian
+  - canadian
+  - turkish
+  - bulgarian
+  - brazilian
+  - colombian
+  - irish
+  - jewish
+  - danish
+  - polish
+  - mexican
+  - argentinian
+  - dutch
+  - belgian
+  - iranian
+  - israeli
+  - ukrainian
+  - swiss
+  - scottish
+  - palestinian
+  - british
+  # Numbers
+  - one
+  - two
+  - three
+  - four
+  - five
+  - six
+  - seven
+  - eight
+  - nine
+  - ten
+  # Colors
+  - blue
+  - yellow
+  - white
+  - black
+  - green
+  # Non-adjectives
+  - costa
+  - finishing
+  - cr7
+  - foul
+  - live
+  - key
+  - saint-etienne
+  - rid
+  - s04
+  - to
+  - ro16
+  - my
+  - refereeing
+  - schalke04
+  # Other
+  - west # Usually West Ham or West Bromwich
+  - east
+  - top
+  - mid
+  - low
+  - extra
+  - added
+  - once
+  - twice
+
+  blacklisted_adjective_patterns:
+  - ^[0-9]+(th|st|nd|rd)$ # 1st, 5th, etc.
+  - ^(?!.*[a-zA-Z]).*$ # No letters
+  - ^[0-9]+(m|mil)$ # Prices: 80m, 100mil, etc.
+  - ^u[0-9]+$ # u21, etc.
+  - ^[0-9]y+$ # y9
+  - ^l[0-9]+$ # l1
+
+  max_adjectives_per_entity: 3
+
+  common_adjectives_to_exclude: 100
+
+  min_count: 5
+
+  scoring:
+    local_frequency_coefficient: 1
+    global_frequency_coefficient: -1.5
+
+  sequence:
+    phase2:
+      - filter-blacklisted-adjectives
+      - score
+      - filter-common-adjectives
+      - sort-entities
+      - filter-low-count-adjectives
+      - take-top
+
+entities:
 # EPL
 - canonical_name: Arsenal
   alternative_names: ['Gunners']

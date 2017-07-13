@@ -7,7 +7,7 @@ Dir[File.dirname(__FILE__) + '/../../lib/entity_adjectives/*.rb'].each { |file| 
 
 data = JSON.parse(ARGF.read)
 
-config = YAML.load_file './config/config.yaml'
+config = YAML.load_file('./config/teams.yaml')['config']
 
 filter = EntityAdjectives::AdjectiveFilter.new(config)
 
