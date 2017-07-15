@@ -10,13 +10,17 @@ Dir[File.dirname(__FILE__) + '/phase3/*.rb'].each { |file| require file }
 
 include SoccerAdjectives
 
-# TODO: allow specifying the phase to run.
-# TODO: allow specifying the config.
 options = {}
 opt_parser = OptionParser.new do |opt|
-  opt.banner = 'Usage: run.rb --input-file INPUT-FILE --config-file CONFIG-FILE'
+  opt.banner = 'Usage: run.rb --input-file INPUT-FILE --config-file CONFIG-FILE [--stages STAGES]'
   opt.on('-i', '--input-file INPUT-FILE') { |o| options[:input_file_path] = o }
   opt.on('-c', '--config-file CONFIG-FILE') { |o| options[:config_file_path] = o }
+  opt.on('-s', '--stages STAGES') do |o|
+    options[:stages] = o.split(',').map do |s|
+      raise "Unknown stage: #{s}" unless s.match(/^\d+$/) && s.to_i >= 1 && s.to_i <= 3
+      s.to_i
+    end.to_set
+  end
 end
 opt_parser.parse!
 
@@ -41,16 +45,21 @@ FileUtils.mkdir_p './output/phase3'
 
 system 'bundle install'
 
-Phase1.map args
-Phase1.reduce
-
-args[:data] = JSON.parse(File.read('./output/phase1/reduced.json'))
-
-config['sequence']['phase2'].each do |e|
-  method = e.tr('-', '_')
-  Phase2.send method, args
+if options[:stages].include?(1)
+  Phase1.map args
+  Phase1.reduce
 end
 
-Phase3.export args
+if options[:stages].include?(2)
+  args[:data] = JSON.parse(File.read('./output/phase1/reduced.json'))
 
-puts 'Done! The results are in ./output/phase3/'
+  config['sequence']['phase2'].each do |e|
+    method = e.tr('-', '_')
+    Phase2.send method, args
+  end
+end
+
+if options[:stages].include?(3)
+  Phase3.export args
+  puts 'Done! The results are in ./output/phase3/'
+end
