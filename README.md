@@ -5,9 +5,9 @@ Given an archive of comments, find out what adjectives best describe teams.
 # Usage
 * Install Ruby.
 * Install bundler: http://bundler.io/
-* From the root directory, run ``./scripts/run.rb <path-to-input>``. The input file must be a .csv with comment body in the first column and comment id in the second.
+* From the root directory, run ``./scripts/run.rb --input-file INPUT-FILE --config-file CONFIG-FILE``. The input file must be a .csv with comment body in the first column and comment id in the second.
 
-Use ./input/sample.csv as a sample input. Note that the output for it is likely to be empty because there are too few adjectives in it, and they are likely to be excluded by the popularity filter.
+Example: ``./scripts/run.rb --input-file input/sample.csv --config-file config/teams.yaml``. Note that the output for it is likely to be empty because there are too few adjectives in the sample input, and they are likely to be excluded by the popularity filter.
 
 Real data can be downloaded from https://bigquery.cloud.google.com/dataset/fh-bigquery:reddit_comments
 
