@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
+require 'optparse'
 require 'fileutils'
 
 Dir[File.dirname(__FILE__) + '/../lib/entity_adjectives/*.rb'].each { |file| require file }
@@ -11,9 +12,16 @@ include SoccerAdjectives
 
 # TODO: allow specifying the phase to run.
 # TODO: allow specifying the config.
-unless ARGV.length == 1
-  puts 'Usage: phase1.rb <path-to-input-file>'
-  puts 'The file must be a .csv with comment body in the first column and comment id in the second.'
+options = {}
+opt_parser = OptionParser.new do |opt|
+  opt.banner = 'Usage: run.rb --input-file INPUT-FILE'
+  opt.on('--input-file INPUT-FILE') { |o| options[:input_file_path] = o }
+end
+opt_parser.parse!
+
+required_options = [:input_file_path]
+if required_options.any? { |o| options[o].nil? }
+  puts opt_parser.banner
   exit 1
 end
 
@@ -21,7 +29,7 @@ config_file = YAML.load_file './config/teams.yaml'
 config = config_file['config']
 
 args = {
-  input_file_path: ARGV[0],
+  input_file_path: options[:input_file_path],
   config: config,
   entity_definitions: config_file['entities']
 }
