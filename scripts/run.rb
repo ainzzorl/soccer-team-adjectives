@@ -14,18 +14,19 @@ include SoccerAdjectives
 # TODO: allow specifying the config.
 options = {}
 opt_parser = OptionParser.new do |opt|
-  opt.banner = 'Usage: run.rb --input-file INPUT-FILE'
+  opt.banner = 'Usage: run.rb --input-file INPUT-FILE --config-file CONFIG-FILE'
   opt.on('--input-file INPUT-FILE') { |o| options[:input_file_path] = o }
+  opt.on('--config-file CONFIG-FILE') { |o| options[:config_file_path] = o }
 end
 opt_parser.parse!
 
-required_options = [:input_file_path]
+required_options = %i[input_file_path config_file_path]
 if required_options.any? { |o| options[o].nil? }
   puts opt_parser.banner
   exit 1
 end
 
-config_file = YAML.load_file './config/teams.yaml'
+config_file = YAML.load_file options[:config_file_path]
 config = config_file['config']
 
 args = {
