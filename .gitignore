@@ -2,4 +2,6 @@ input/*
 !input/sample.csv
 output/
 tmp/
+.bundle/
+vendor/
 
