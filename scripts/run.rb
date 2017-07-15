@@ -10,7 +10,9 @@ Dir[File.dirname(__FILE__) + '/phase3/*.rb'].each { |file| require file }
 
 include SoccerAdjectives
 
-options = {}
+options = {
+  stages: [1, 2, 3].to_set
+}
 opt_parser = OptionParser.new do |opt|
   opt.banner = 'Usage: run.rb --input-file INPUT-FILE --config-file CONFIG-FILE [--stages STAGES]'
   opt.on('-i', '--input-file INPUT-FILE') { |o| options[:input_file_path] = o }
