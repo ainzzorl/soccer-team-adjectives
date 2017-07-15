@@ -1,20 +1,17 @@
 # Filter out blacklisted adjectives.
 
-require 'json'
-require 'yaml'
+module SoccerAdjectives
+  module Phase2
+    def self.filter_blacklisted_adjectives(args)
+      data = args[:data]
+      config = args[:config]
+      filter = EntityAdjectives::AdjectiveFilter.new(config)
 
-Dir[File.dirname(__FILE__) + '/../../lib/entity_adjectives/*.rb'].each { |file| require file }
-
-data = JSON.parse(ARGF.read)
-
-config = YAML.load_file('./config/teams.yaml')['config']
-
-filter = EntityAdjectives::AdjectiveFilter.new(config)
-
-data.keys.each do |entity|
-  data[entity].reject! do |entry|
-    filter.exclude?(entry['adjective'])
+      data.keys.each do |entity|
+        data[entity].reject! do |entry|
+          filter.exclude?(entry['adjective'])
+        end
+      end
+    end
   end
 end
-
-puts JSON.pretty_generate(data)

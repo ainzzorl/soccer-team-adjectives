@@ -9,46 +9,45 @@
 # Words with high global frequency tend to be very generic.
 # Choose Y < 0 to promote more unusual (and likely more interesting) adjectives.
 
-require 'json'
-require 'yaml'
+module SoccerAdjectives
+  module Phase2
+    def self.score(args)
+      config = YAML.load_file('./config/teams.yaml')['config']
 
-Dir[File.dirname(__FILE__) + '/../../lib/entity_adjectives/*.rb'].each { |file| require file }
+      local_frequency_coefficient = config['scoring']['local_frequency_coefficient'].to_f
+      global_frequency_coefficient = config['scoring']['global_frequency_coefficient'].to_f
 
-config = YAML.load_file('./config/teams.yaml')['config']
+      data = args[:data]
 
-local_frequency_coefficient = config['scoring']['local_frequency_coefficient'].to_f
-global_frequency_coefficient = config['scoring']['global_frequency_coefficient'].to_f
+      adjectives = {}
+      total_adjective_count = 0
 
-data = JSON.parse(ARGF.read)
+      data.keys.each do |entity|
+        data[entity].each do |p|
+          adjective = p['adjective']
+          count = p['count']
+          total_adjective_count += count
+          adjectives[adjective] = { count: 0 } unless adjectives.key?(adjective)
+          adjectives[adjective][:count] = adjectives[adjective][:count] + count
+        end
+      end
 
-adjectives = {}
-total_adjective_count = 0
+      adjectives.keys.each do |a|
+        adjectives[a][:ratio] = adjectives[a][:count].to_f / total_adjective_count
+      end
 
-data.keys.each do |entity|
-  data[entity].each do |p|
-    adjective = p['adjective']
-    count = p['count']
-    total_adjective_count += count
-    adjectives[adjective] = { count: 0 } unless adjectives.key?(adjective)
-    adjectives[adjective][:count] = adjectives[adjective][:count] + count
+      data.keys.each do |entity|
+        total_adjective_entity_count = data[entity].inject(0) { |sum, entry| sum + entry['count'] }
+        data[entity].each do |entry|
+          entry['local_frequency'] = entry['count'].to_f / total_adjective_entity_count
+          entry['global_frequency'] = adjectives[entry['adjective']][:ratio]
+          entry['score'] = entry['local_frequency'] * local_frequency_coefficient +
+                           entry['global_frequency'] * global_frequency_coefficient
+        end
+        data[entity] = data[entity].sort_by do |entry|
+          -entry['score']
+        end
+      end
+    end
   end
 end
-
-adjectives.keys.each do |a|
-  adjectives[a][:ratio] = adjectives[a][:count].to_f / total_adjective_count
-end
-
-data.keys.each do |entity|
-  total_adjective_entity_count = data[entity].inject(0) { |sum, entry| sum + entry['count'] }
-  data[entity].each do |entry|
-    entry['local_frequency'] = entry['count'].to_f / total_adjective_entity_count
-    entry['global_frequency'] = adjectives[entry['adjective']][:ratio]
-    entry['score'] = entry['local_frequency'] * local_frequency_coefficient +
-                     entry['global_frequency'] * global_frequency_coefficient
-  end
-  data[entity] = data[entity].sort_by do |entry|
-    -entry['score']
-  end
-end
-
-puts JSON.pretty_generate(data)

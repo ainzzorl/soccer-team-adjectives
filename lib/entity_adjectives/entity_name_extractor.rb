@@ -1,3 +1,5 @@
+require 'set'
+
 module EntityAdjectives
   # Extract entity names from a segment.
   class EntityNameExtractor
