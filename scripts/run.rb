@@ -15,8 +15,8 @@ include SoccerAdjectives
 options = {}
 opt_parser = OptionParser.new do |opt|
   opt.banner = 'Usage: run.rb --input-file INPUT-FILE --config-file CONFIG-FILE'
-  opt.on('--input-file INPUT-FILE') { |o| options[:input_file_path] = o }
-  opt.on('--config-file CONFIG-FILE') { |o| options[:config_file_path] = o }
+  opt.on('-i', '--input-file INPUT-FILE') { |o| options[:input_file_path] = o }
+  opt.on('-c', '--config-file CONFIG-FILE') { |o| options[:config_file_path] = o }
 end
 opt_parser.parse!
 
