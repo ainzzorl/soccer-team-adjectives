@@ -5,7 +5,7 @@ Given an archive of comments, find out what adjectives best describe teams.
 # Usage
 * Install Ruby.
 * Install bundler: http://bundler.io/
-* From the root directory, run ``./scripts/run.rb --input-file INPUT-FILE --config-file CONFIG-FILE [--stages STAGES]``. The input file must be a .csv with comment body in the first column and comment id in the second.
+* From the root directory, run ``./scripts/run.rb --input-file INPUT-FILE --config-file CONFIG-FILE [--stages STAGES] [--debug]``. The input file must be a .csv with comment body in the first column and comment id in the second.
 
 Example: ``./scripts/run.rb --input-file input/sample.csv --config-file config/teams.yaml``. Note that the output for it is likely to be empty because there are too few adjectives in the sample input, and they are likely to be excluded by the popularity filter.
 
