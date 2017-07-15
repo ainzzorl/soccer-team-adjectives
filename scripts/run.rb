@@ -22,7 +22,8 @@ config = config_file['config']
 
 args = {
   input_file_path: ARGV[0],
-  config: config
+  config: config,
+  entity_definitions: config_file['entities']
 }
 
 FileUtils.mkdir_p './output/phase1'

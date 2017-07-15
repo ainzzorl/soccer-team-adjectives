@@ -3,7 +3,7 @@
 module SoccerAdjectives
   module Phase2
     def self.take_top(args)
-      config = YAML.load_file('./config/teams.yaml')['config']
+      config = args[:config]
 
       data = args[:data]
 

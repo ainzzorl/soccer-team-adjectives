@@ -5,11 +5,8 @@ require 'yaml'
 module SoccerAdjectives
   module Phase3
     def self.export(args)
-      config_file = YAML.load_file './config/teams.yaml'
-
-      config = config_file['config']
-
-      entities = config_file['entities']
+      config = args[:config]
+      entities = args[:entity_definitions]
 
       data = args[:data]
 

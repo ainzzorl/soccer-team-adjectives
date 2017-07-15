@@ -3,7 +3,7 @@
 module SoccerAdjectives
   module Phase2
     def self.filter_low_count_adjectives(args)
-      config = YAML.load_file('./config/teams.yaml')['config']
+      config = args[:config]
 
       data = args[:data]
 

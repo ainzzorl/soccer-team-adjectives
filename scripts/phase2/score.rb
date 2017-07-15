@@ -12,7 +12,7 @@
 module SoccerAdjectives
   module Phase2
     def self.score(args)
-      config = YAML.load_file('./config/teams.yaml')['config']
+      config = args[:config]
 
       local_frequency_coefficient = config['scoring']['local_frequency_coefficient'].to_f
       global_frequency_coefficient = config['scoring']['global_frequency_coefficient'].to_f

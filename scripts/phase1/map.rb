@@ -12,7 +12,7 @@ module SoccerAdjectives
       input_file_path = args[:input_file_path]
       output_file_path = './output/phase1/mapped.dat'.freeze
 
-      entity_name_extractor = EntityAdjectives::EntityNameExtractor.new(YAML.load_file('./config/teams.yaml')['entities'])
+      entity_name_extractor = EntityAdjectives::EntityNameExtractor.new(args[:entity_definitions])
       comment_data_extractor = EntityAdjectives::CommentDataExtractor.new(entity_name_extractor)
 
       output_file = File.open(output_file_path, 'w')
